@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta charset="utf-8">
+    <meta name="keywords" th:content="${keywords}" content="Physiotherapy Clinic" />
+    <meta name="description" th:content="${description}" content="Clinica Rajem" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Clinica Rajem</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" th:href="@{/images/favicon.ico}" href="images/favicon.ico" />
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" th:href="@{/css/font-awesome/all.min.css}" href="css/font-awesome/all.min.css" />
+    <link rel="stylesheet" th:href="@{/css/flaticon/flaticon.css}" href="css/flaticon/flaticon.css" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" href="css/bootstrap/bootstrap.min.css" />
+
+
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+    <link rel="stylesheet" th:href="@{/css/owl-carousel/owl.carousel.min.css}"
+        href="css/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" th:href="@{/css/magnific-popup/magnific-popup.css}"
+        href="css/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="css/select2/select2.css" />
+    <link rel="stylesheet" href="css/datetimepicker/datetimepicker.min.css" />
+
+
+    <!-- Template Style -->
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="css/style.css" />
+</head>
+
+</html>

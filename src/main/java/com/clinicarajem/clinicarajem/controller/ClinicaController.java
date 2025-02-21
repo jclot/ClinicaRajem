@@ -11,8 +11,29 @@ public class ClinicaController {
         return "index";
     }
 
-    @GetMapping("/blog")
-    public String blog() {
-        return "blog/blog";
+    @GetMapping("/services")
+    public String service() {
+        return "services/service";
     }
+
+    @GetMapping("/department")
+    public String departments() {
+        return "department/departments";
+    }
+
+    @GetMapping("/services/service-detail")
+    public String serviceDetail() {
+        return "services/service-detail";
+    }
+
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact/contact-us";
+    }
+
+    @GetMapping("/appointment")
+    public String appointment() {
+        return "appointment/appointment";
+    }
+
 }

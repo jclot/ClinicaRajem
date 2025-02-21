@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:with="activePage='contact-us'">
+
+<head th:replace="~{layout/head :: head}"></head>
+
+<body>
+  <!--=================================
+    header -->
+  <header th:replace="~{layout/header :: header}"></header>
+  <!--=================================
+    header -->
+
+  <!--=================================
+    banner -->
+  <section class="inner-banner bg-light">
+    <div class="container">
+      <div class="row align-items-center intro-title">
+        <div class="col-12">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="index.html"> <i class="fas fa-home"></i> </a></li>
+            <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> contact-us</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=================================
+    banner -->
+
+  <!--=================================
+    Contact-info-->
+  <section class="space-ptb half-overlay left-position position-relative">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 col-md-6 position-relative">
+          <!-- Get In Touch -->
+          <div class="contact-info">
+            <div class="section-title text-sm-start text-center">
+              <h3>Get In Touch With Us</h3>
+              <p>The best way is to develop and follow a plan. Start with your goals in mind and then work backwards to
+                develop the plan.</p>
+            </div>
+
+            <!-- Address -->
+            <div class="feature-item d-sm-flex d-block text-sm-start text-center">
+              <div class="feature-item-icon mb-sm-0 mb-4">
+                <i class="flaticon-location"></i>
+              </div>
+              <div class="feature-item-content">
+                <h4 class="feature-item-title">Address</h4>
+                <span>6580 Allison Turnpike Creminfort, AL 32808-4509</span>
+              </div>
+            </div>
+            <!-- Address -->
+
+            <!-- Phone -->
+            <div class="feature-item d-sm-flex d-block text-sm-start text-center">
+              <div class="feature-item-icon mb-sm-0 mb-4">
+                <i class="flaticon-call"></i>
+              </div>
+              <div class="feature-item-content">
+                <h4 class="feature-item-title">Phone</h4>
+                <span>+0123 456 789</span>
+                <span>+704 279 1249</span>
+              </div>
+            </div>
+            <!-- Phone -->
+
+            <!-- Email -->
+            <div class="feature-item mb-0 d-sm-flex d-block text-sm-start text-center">
+              <div class="feature-item-icon mb-sm-0 mb-4">
+                <i class="flaticon-email"></i>
+              </div>
+              <div class="feature-item-content">
+                <h4 class="feature-item-title">Email</h4>
+                <span>support@medileaf.com</span>
+                <span>letstalk@medileaf.com</span>
+              </div>
+            </div>
+            <!-- Email -->
+          </div>
+          <!-- Get In Touch -->
+        </div>
+        <div class="col-lg-7 col-md-6 mt-md-0 mt-5">
+          <!-- Contact-form -->
+          <div class="contact-form ms-lg-4">
+            <div class="section-title">
+              <h3>We'd love to hear from you</h3>
+              <p>The price is something not necessarily defined as financial. It could be time, effort, sacrifice, money
+                or perhaps, something else.</p>
+            </div>
+            <form>
+              <div class="row align-items-center">
+                <div class="mb-3 col-md-6">
+                  <input type="text" class="form-control" id="first-name" placeholder="First Name">
+                </div>
+                <div class="mb-3 col-md-6">
+                  <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="mb-3 col-md-6">
+                  <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                </div>
+                <div class="mb-3 col-md-6">
+                  <input type="text" class="form-control" id="subject" placeholder="Subject">
+                </div>
+                <div class="mb-3 col-lg-12">
+                  <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                </div>
+                <div class="mb-3 col-sm-12 mb-0">
+                  <button type="submit" class="btn btn-outline-primary">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- CSontact-form -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=================================
+    Contact-info-->
+
+  <!--=================================
+    Map -->
+  <section class="">
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+        <div class="col-lg-12">
+          <div class="map">
+            <!-- iframe START -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96873.54747598754!2d-74.01503722010821!3d40.64535309479206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24416947c2109%3A0x82765c7404007886!2sBrooklyn%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1583241765545!5m2!1sen!2sin"
+              style="border:0; width: 100%; height: 100%" allowfullscreen=""></iframe>
+            <!-- iframe END -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=================================
+    Map -->
+
+  <!--=================================
+    footer -->
+  <footer th:replace="~{layout/footer :: footer('space-pt footer')}"></footer>
+  <!--=================================
+    footer -->
+
+  <!--=================================
+    Javascript -->
+
+  <!-- JS Global Compulsory (Do not remove)-->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/popper/popper.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+
+  <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+
+  <!-- Template Scripts (Do not remove)-->
+  <script src="js/custom.js"></script>
+
+</body>
+
+</html>
