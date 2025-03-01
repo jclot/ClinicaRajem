@@ -263,7 +263,16 @@ NOTE: This file contains all scripts for the actual Template.
           mainClass: 'mfp-fade',
           removalDelay: 160,
           preloader: false,
-          fixedContentPos: false
+          fixedContentPos: false,
+          iframe: {
+            patterns: {
+              facebook: {
+                src: function (src) {
+                  return src.replace("facebook.com", "facebook.com/plugins/video.php");
+                }
+              }
+            }
+          }
         });
       }
       var $modal = $('.modal-onload');
