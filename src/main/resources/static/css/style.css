@@ -9050,7 +9050,7 @@ ul.list-style-underline li:last-child {
 }
 
 .commentlist .comment-content .reviews .rating i {
-  color: #006838;
+  color: #a4b69e;
 }
 
 .form-check-label {
@@ -9149,8 +9149,8 @@ ul.list-style-underline li:last-child {
 }
 
 .shop-sidebar .widget .tagcloud ul li a:hover {
-  background: #006838;
-  border: 1px solid #006838;
+  background: #a4b69e;
+  border: 1px solid #a4b69e;
   color: #ffffff;
 }
 
@@ -9162,13 +9162,13 @@ ul.list-style-underline li:last-child {
 }
 
 .shop-sidebar .widget .widget-categories ul li a:hover {
-  color: #006838;
+  color: #a4b69e;
 }
 
 .search-field {
   padding-left: 20px;
   box-shadow: none;
-  border: 1px solid #006838;
+  border: 1px solid #a4b69e;
   height: 50px;
   border-radius: 0;
   width: 100%;
@@ -9242,7 +9242,7 @@ ul.list-style-underline li:last-child {
   border: none;
   padding: 15px 10px;
   color: #ffffff;
-  background-color: #006838;
+  background-color: #a4b69e;
   text-align: left;
   vertical-align: middle;
 }
@@ -9270,7 +9270,7 @@ ul.list-style-underline li:last-child {
 }
 
 .cart-table .table tr td a:hover {
-  color: #006838;
+  color: #a4b69e;
 }
 
 .cart-table .table tr td .form-group {
@@ -9290,7 +9290,7 @@ ul.list-style-underline li:last-child {
 }
 
 .cart-table .actions .coupon .input-text {
-  border: 1px solid #006838;
+  border: 1px solid #a4b69e;
   border-radius: 0px;
   height: 48px;
   padding: 10px 20px;
