@@ -1,10 +1,16 @@
 package com.clinicarajem.clinicarajem.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import com.clinicarajem.clinicarajem.service.LocationService;
 
 @Controller
 public class ClinicaController {
+
+    @Autowired
+    private LocationService locationService;
 
     @GetMapping("/")
     public String index() {
@@ -32,8 +38,24 @@ public class ClinicaController {
     }
 
     @GetMapping("/appointment")
-    public String appointment() {
+    public String appointmentForm(Model model) {
+        model.addAttribute("provincias", locationService.getProvincias());
         return "appointment/appointment";
+    }
+
+    @GetMapping("/timetable")
+    public String timetable() {
+        return "timetable/timetable";
+    }
+
+    @GetMapping("/workinghours")
+    public String workinghours() {
+        return "workinghours/workinghours";
+    }
+
+    @GetMapping("/error404")
+    public String error404() {
+        return "error404";
     }
 
 }

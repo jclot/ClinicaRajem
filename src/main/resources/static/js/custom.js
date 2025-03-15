@@ -20,6 +20,7 @@ NOTE: This file contains all scripts for the actual Template.
 :: Swiper slider
 ::Slickslider
 ::Magnific Popup
+::City Select
 ::Shuffle
 ::datetimepicker
 ::select2
@@ -302,6 +303,74 @@ NOTE: This file contains all scripts for the actual Template.
   }
 
   /*************************
+      City Select
+  *************************/
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Inicializar Select2 al cargar la página
+    $('#provincia, #canton, #distrito').select2();
+
+    const provinciaSelect = $('#provincia');
+    const cantonSelect = $('#canton');
+    const distritoSelect = $('#distrito');
+
+    provinciaSelect.on('change', function () {
+      const provinciaId = this.value;
+
+      // Si se selecciona "Seleccione Provincia", restablecer todo
+      if (!provinciaId) {
+        cantonSelect.empty().append('<option value="">Seleccione Cantón</option>').prop('disabled', true);
+        distritoSelect.empty().append('<option value="">Seleccione Distrito</option>').prop('disabled', true);
+
+        // Reinicializar Select2 para reflejar cambios
+        cantonSelect.select2('destroy').select2();
+        distritoSelect.select2('destroy').select2();
+        return; // Salir de la función para evitar ejecutar el fetch innecesario
+      }
+
+      // Reiniciar y habilitar solo el select de cantón
+      cantonSelect.empty().append('<option value="">Seleccione Cantón</option>').prop('disabled', false);
+      distritoSelect.empty().append('<option value="">Seleccione Distrito</option>').prop('disabled', true);
+      cantonSelect.select2('destroy').select2();
+      distritoSelect.select2('destroy').select2();
+
+      // Cargar cantones según la provincia seleccionada
+      fetch(`/api/cantones/${provinciaId}`)
+        .then(response => response.json())
+        .then(data => {
+          Object.entries(data).forEach(([cantonId, canton]) => {
+            cantonSelect.append(new Option(canton.nombre, cantonId));
+          });
+          cantonSelect.select2(); // Re-inicializar Select2 con nuevas opciones
+        });
+    });
+
+    cantonSelect.on('change', function () {
+      const provinciaId = provinciaSelect.val();
+      const cantonId = this.value;
+
+      if (!cantonId) {
+        distritoSelect.empty().append('<option value="">Seleccione Distrito</option>').prop('disabled', true);
+        distritoSelect.select2('destroy').select2();
+        return;
+      }
+
+      distritoSelect.empty().append('<option value="">Seleccione Distrito</option>').prop('disabled', false);
+      distritoSelect.select2('destroy').select2();
+
+      fetch(`/api/distritos/${provinciaId}/${cantonId}`)
+        .then(response => response.json())
+        .then(data => {
+          Object.entries(data).forEach(([distritoId, nombre]) => {
+            distritoSelect.append(new Option(nombre, distritoId));
+          });
+          distritoSelect.select2();
+        });
+    });
+  });
+
+
+  /*************************
       Shuffle
   *************************/
   POTENZA.shuffle = function () {
@@ -332,20 +401,69 @@ NOTE: This file contains all scripts for the actual Template.
     }
   }
 
-
   /*************************
-      Datetimepicker
+        Datetimepicker
   *************************/
   POTENZA.datetimepickers = function () {
     if ($('.datetimepickers').exists()) {
+      function aplicarRestriccionesHorarias(fecha) {
+        if (!fecha) return;
+
+        const dayOfWeek = fecha.day();
+        let minTime, maxTime;
+        const esHoy = fecha.isSame(moment(), 'day');
+
+        if ([1, 2, 4].includes(dayOfWeek)) {
+          minTime = moment('09:00', 'HH:mm');
+          maxTime = moment('19:00', 'HH:mm');
+        } else if ([3, 5].includes(dayOfWeek)) {
+          minTime = moment('09:00', 'HH:mm');
+          maxTime = moment('17:00', 'HH:mm');
+        } else {
+          return;
+        }
+
+        const hoy = moment();
+        minTime = moment(hoy.format('YYYY-MM-DD') + ' ' + minTime.format('HH:mm'));
+        maxTime = moment(hoy.format('YYYY-MM-DD') + ' ' + maxTime.format('HH:mm'));
+
+        $('#datetimepicker-03').datetimepicker('minDate', minTime);
+        $('#datetimepicker-03').datetimepicker('maxDate', maxTime);
+
+        const currentTime = $('#datetimepicker-03').datetimepicker('date');
+        if (currentTime) {
+          const currentTimeOnly = moment(hoy.format('YYYY-MM-DD') + ' ' + currentTime.format('HH:mm'));
+          if (currentTimeOnly.isBefore(minTime) || currentTimeOnly.isAfter(maxTime)) {
+            $('#datetimepicker-03').datetimepicker('date', minTime);
+          }
+        }
+      }
+
       $('#datetimepicker-01, #datetimepicker-02').datetimepicker({
-        format: 'L'
+        format: 'L',
+        minDate: moment().startOf('day'),
+        daysOfWeekDisabled: [0, 6],
+        date: moment()
       });
+
       $('#datetimepicker-03, #datetimepicker-04').datetimepicker({
-        format: 'LT'
+        format: 'LT',
+        daysOfWeekDisabled: [0, 6]
+      });
+
+      aplicarRestriccionesHorarias(moment());
+
+      $('#datetimepicker-01').on('change.datetimepicker', function (e) {
+        aplicarRestriccionesHorarias(e.date);
+      });
+
+      $('#datetimepicker-03').on('show.datetimepicker', function (e) {
+        const fechaSeleccionada = $('#datetimepicker-01').datetimepicker('date') || moment();
+        aplicarRestriccionesHorarias(fechaSeleccionada);
       });
     }
   };
+
 
   /*************************
       Select2
