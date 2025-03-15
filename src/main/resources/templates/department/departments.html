@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="activePage='departments'">
 
 <head th:replace="~{layout/head :: head}"></head>
 
@@ -17,8 +17,8 @@
       <div class="row align-items-center intro-title">
         <div class="col-12">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index.html"> <i class="fas fa-home"></i> </a></li>
-            <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Departments </span></li>
+            <li class="breadcrumb-item"><a th:href="@{/}"> <i class="fas fa-home"></i> </a></li>
+            <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> departamentos </span></li>
           </ol>
         </div>
       </div>
@@ -286,7 +286,7 @@
 
   <!--=================================
     Schedule -->
-  <section class="mb-lg-n6 mb-md-n5 pb-0 pb-sm-4 pb-lg-0">
+  <section class="space-pt mb-lg-n6 mb-md-n5 pb-0 pb-sm-4 pb-lg-0">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
@@ -298,10 +298,10 @@
                     <i class="flaticon-emergency-call"></i>
                   </div>
                   <div class="schedule-morden-content">
-                    <h6>Emergency Case</h6>
-                    <span class="phone-number h4">+(704) 279-1249 </span>
-                    <p class="mb-0">Commitment is something that comes from understanding that everything has its price
-                      and then having the willingness to pay that price.</p>
+                    <h6>Número de contacto</h6>
+                    <span class="phone-number h4">+(506) 8955-4444 </span>
+                    <p class="mb-0">Comunícate con nosotros para agendar tu cita o resolver cualquier duda. Estamos aquí
+                      para ayudarte a recuperar tu bienestar.</p>
                   </div>
                 </div>
               </div>
@@ -311,20 +311,20 @@
                     <i class="flaticon-clock"></i>
                   </div>
                   <div class="schedule-morden-content">
-                    <h6>Opening Hours</h6>
+                    <h6>Horarios de atención</h6>
                     <div class="opening-hourse">
                       <ul class="list-unstyled">
                         <li>
-                          <span>Monday – Friday</span>
-                          <div class="time"> 08.30 - 18.30 </div>
+                          <span>Lunes, Martes y Jueves</span>
+                          <div class="time"> 09am - 7pm </div>
                         </li>
                         <li>
-                          <span>Saturday</span>
-                          <div class="time"> 09.30 - 17.30 </div>
+                          <span>Miércoles y Viernes</span>
+                          <div class="time"> 09am - 5pm </div>
                         </li>
                         <li>
-                          <span>Sunday</span>
-                          <div class="time"> 09.30 - 15.30 </div>
+                          <span>Sábado y Domingo</span>
+                          <div class="time"> Cerrado </div>
                         </li>
                       </ul>
                     </div>
@@ -337,11 +337,11 @@
                     <i class="flaticon-calendar"></i>
                   </div>
                   <div class="schedule-morden-content">
-                    <h6>Doctors Timetable</h6>
-                    <p class="mb-4">This is important because nobody wants to put significant effort into something,
-                      only to find out after the fact that the price was too high.</p>
-                    <a class="btn btn-outline-primary" href="timetable.html"><i class="fa fa-address-book"></i>View
-                      Timetable</a>
+                    <h6>Tabla de horario</h6>
+                    <p class="mb-4">Consulta nuestro horario especifico y agenda tu cita con la doctora. Encuentra el
+                      momento que mejor se adapte a ti.</p>
+                    <a class="btn btn-outline-primary" href="timetable.html"><i class="fa fa-address-book"></i>Ver
+                      Tabla</a>
                   </div>
                 </div>
               </div>
@@ -356,7 +356,7 @@
 
   <!--=================================
     footer -->
-    <footer th:replace="~{layout/footer :: footer('space-lg-pt bg-light footer')}"></footer>
+  <footer th:replace="~{layout/footer :: footer('space-lg-pt bg-light footer')}"></footer>
   <!--=================================
     footer -->
 

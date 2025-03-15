@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="activePage='appointment'">
 
 <head th:replace="~{layout/head :: head}"></head>
 </head>
@@ -18,10 +18,11 @@
       <div class="row align-items-center intro-title">
         <div class="col-12">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index.html"> <i class="fas fa-home"></i> </a></li>
-            <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="javascript:void(0)">Pages</a>
+            <li class="breadcrumb-item"><a th:href="@{/}"> <i class="fas fa-home"></i> </a></li>
+            <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="javascript:void(0)">portal
+                clínico</a>
             </li>
-            <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Appointment </span></li>
+            <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> citas </span></li>
           </ol>
         </div>
       </div>
@@ -40,69 +41,67 @@
         </div>
         <div class="col-lg-7 position-relative">
           <div class="appointment-form">
-            <h4 class="text-primary">Make An Appointment Now!</h4>
+            <h4 class="text-primary">Agenda tu cita ahora!</h4>
             <form class="mt-5">
               <div class="row align-items-center">
                 <div class="form-group mb-3 col-md-6">
-                  <input type="text" class="form-control" id="first-name" placeholder="First Name">
+                  <input type="text" class="form-control" id="first-name" placeholder="Nombre" required>
                 </div>
                 <div class="form-group mb-3 col-md-6">
-                  <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+                  <input type="text" class="form-control" id="last-name" placeholder="Apellido" required>
                 </div>
                 <div class="form-group mb-3 col-md-6">
-                  <input type="email" class="form-control" id="email" placeholder="Email">
+                  <input type="email" class="form-control" id="email" placeholder="Correo Electrónico" required>
                 </div>
                 <div class="form-group mb-3 col-md-6">
-                  <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                  <input type="text" class="form-control" id="phone" placeholder="Teléfono" required>
                 </div>
                 <div class="form-group mb-3 col-lg-12">
-                  <input type="text" class="form-control" id="address" placeholder="Address">
+                  <input type="text" class="form-control" id="address" placeholder="Dirección">
                 </div>
-                <div class="form-group mb-3 select-border col-md-4 ">
-                  <select class="form-control basic-select" id="city">
-                    <option value="City">City</option>
-                    <option value="New york">New york</option>
-                    <option value="Los Angeles">Los angeles</option>
-                    <option value="Chicago">Chicago</option>
-                    <option value="Assam">Mumbai</option>
-                    <option value="Assam">Delhi</option>
+                <!-- Province, canton, and district select elements -->
+                <div class="form-group mb-3 select-border col-md-4">
+                  <select class="form-control basic-select" id="provincia" name="provincia">
+                    <option value="">Seleccione Provincia</option>
+                    <option th:each="provincia : ${provincias}" th:value="${provincia.key}"
+                      th:text="${provincia.value.nombre}">Provincia</option>
                   </select>
                 </div>
                 <div class="form-group mb-3 select-border col-md-4">
-                  <select class="form-control basic-select" id="state">
-                    <option value="State">State</option>
-                    <option value="AL">New york</option>
-                    <option value="AK">California</option>
-                    <option value="AZ">Illinois</option>
-                    <option value="AR">Maharashtra</option>
-                    <option value="AR">Delhi</option>
+                  <select class="form-control basic-select" id="canton" name="canton" disabled>
+                    <option value="">Seleccione Cantón</option>
                   </select>
                 </div>
-                <div class="form-group mb-3 col-md-4">
-                  <input type="text" class="form-control" id="zip" placeholder="Zip">
+                <div class="form-group mb-3 select-border col-md-4">
+                  <select class="form-control basic-select" id="distrito" name="distrito" disabled>
+                    <option value="">Seleccione Distrito</option>
+                  </select>
                 </div>
+                <!-- <div class="form-group mb-3 col-md-4">
+                  <input type="text" class="form-control" id="zip" placeholder="Zip">
+                </div> -->
                 <div class="form-group mb-3 col-md-6 datetimepickers">
-                  <label class="form-label text-dark">Required Date</label>
+                  <label class="form-label text-dark">Seleccione la fecha</label>
                   <div class="input-group date" id="datetimepicker-01" data-target-input="nearest">
-                    <input type="text" class="form-control datetimepicker-input" placeholder="Date"
-                      data-target="#datetimepicker-01">
+                    <input type="text" class="form-control datetimepicker-input" placeholder="Fecha"
+                      data-target="#datetimepicker-01" required>
                     <div class="input-group-append" data-target="#datetimepicker-01" data-toggle="datetimepicker">
                       <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                     </div>
                   </div>
                 </div>
                 <div class="form-group mb-3 select-border col-md-6">
-                  <label class="form-label text-dark">Select Time</label>
+                  <label class="form-label text-dark">Seleccione la hora</label>
                   <div class="input-group date" id="datetimepicker-03" data-target-input="nearest">
-                    <input type="text" class="form-control datetimepicker-input" placeholder="Time"
-                      data-target="#datetimepicker-03" />
+                    <input type="text" class="form-control datetimepicker-input" placeholder="Hora"
+                      data-target="#datetimepicker-03" required />
                     <div class="input-group-append" data-target="#datetimepicker-03" data-toggle="datetimepicker">
                       <div class="input-group-text"><i class="far fa-clock"></i></div>
                     </div>
                   </div>
                 </div>
                 <div class="form-group col-sm-12">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Agendar</button>
                 </div>
               </div>
             </form>
@@ -224,10 +223,10 @@
                     <i class="flaticon-emergency-call"></i>
                   </div>
                   <div class="schedule-morden-content">
-                    <h6>Emergency Case</h6>
-                    <span class="phone-number h4">+(704) 279-1249 </span>
-                    <p class="mb-0">Commitment is something that comes from understanding that everything has its price
-                      and then having the willingness to pay that price.</p>
+                    <h6>Número de contacto</h6>
+                    <span class="phone-number h4">+(506) 8955-4444 </span>
+                    <p class="mb-0">Comunícate con nosotros para agendar tu cita o resolver cualquier duda. Estamos aquí
+                      para ayudarte a recuperar tu bienestar.</p>
                   </div>
                 </div>
               </div>
@@ -237,20 +236,20 @@
                     <i class="flaticon-clock"></i>
                   </div>
                   <div class="schedule-morden-content">
-                    <h6>Opening Hours</h6>
+                    <h6>Horarios de atención</h6>
                     <div class="opening-hourse">
                       <ul class="list-unstyled">
                         <li>
-                          <span>Monday – Friday</span>
-                          <div class="time"> 08.30 - 18.30 </div>
+                          <span>Lunes, Martes y Jueves</span>
+                          <div class="time"> 09am - 7pm </div>
                         </li>
                         <li>
-                          <span>Saturday</span>
-                          <div class="time"> 09.30 - 17.30 </div>
+                          <span>Miércoles y Viernes</span>
+                          <div class="time"> 09am - 5pm </div>
                         </li>
                         <li>
-                          <span>Sunday</span>
-                          <div class="time"> 09.30 - 15.30 </div>
+                          <span>Sábado y Domingo</span>
+                          <div class="time"> Cerrado </div>
                         </li>
                       </ul>
                     </div>
@@ -263,11 +262,11 @@
                     <i class="flaticon-calendar"></i>
                   </div>
                   <div class="schedule-morden-content">
-                    <h6>Doctors Timetable</h6>
-                    <p class="mb-4">This is important because nobody wants to put significant effort into something,
-                      only to find out after the fact that the price was too high.</p>
-                    <a class="btn btn-outline-primary" href="timetable.html"><i class="fa fa-address-book"></i>View
-                      Timetable</a>
+                    <h6>Tabla de horario</h6>
+                    <p class="mb-4">Consulta nuestro horario especifico y agenda tu cita con la doctora. Encuentra el
+                      momento que mejor se adapte a ti.</p>
+                    <a class="btn btn-outline-primary" href="timetable.html"><i class="fa fa-address-book"></i>Ver
+                      Tabla</a>
                   </div>
                 </div>
               </div>
@@ -282,7 +281,7 @@
 
   <!--=================================
     footer -->
-    <footer th:replace="~{layout/footer :: footer('space-lg-pt bg-light footer')}"></footer>
+  <footer th:replace="~{layout/footer :: footer('space-lg-pt bg-light footer')}"></footer>
   <!--=================================
     footer -->
 

@@ -23,7 +23,7 @@
           <div class="banner-content py-5 py-xl-6 me-lg-5">
             <h1 class="" style="text-transform: none;">Rehabilitación en suelo pélvico</h1>
             <p class="mb-5">Recupera tu bienestar con atención especializada y personalizada.</p>
-            <a class="btn btn-outline-primary" href="#">Descubre más</a>
+            <a class="btn btn-outline-primary" th:href="@{/services}">Descubre Más</a>
             <div class="banner-img1 position-absolute top-0 left-0">
               <!-- SVG START -->
               <img class="img-fluid" th:src="@{/images/svg/01.svg}" alt="">
@@ -88,7 +88,7 @@
                           <div class="time"> 09am - 5pm </div>
                         </li>
                         <li>
-                          <span>Sabado y Domingo</span>
+                          <span>Sábado y Domingo</span>
                           <div class="time"> Cerrado </div>
                         </li>
                       </ul>
@@ -104,8 +104,8 @@
                   <div class="schedule-morden-content">
                     <h6 style="text-transform: none;">Tabla de horario</h6>
                     <p class="mb-4">Consulta nuestro horario especifico y agenda tu cita con la doctora. Encuentra el
-                      momento que mejor se adapte a ti</p>
-                    <a class="btn btn-outline-primary" href="timetable.html"><i class="fa fa-address-book"></i>Ver
+                      momento que mejor se adapte a ti.</p>
+                    <a class="btn btn-outline-primary" th:href="@{/timetable}"><i class="fa fa-address-book"></i>Ver
                       Tabla</a>
                   </div>
                 </div>
@@ -149,7 +149,8 @@
               saltar, o a tener una vida sexual plena.
             </p>
           </div>
-          <p><b>Atención Individual:</b> Cada tratamiento se adapta a las necesidades del paciente, garantizando una atención
+          <p><b>Atención Individual:</b> Cada tratamiento se adapta a las necesidades del paciente, garantizando una
+            atención
             personalizada.
           <p><b>Innovación:</b> Contamos con equipos avanzados para diagnósticos y tratamientos de alta precisión.</p>
           </p>
@@ -160,8 +161,8 @@
                   para tratamientos efectivos.</li>
                 <li class="mb-3 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Ambiente cómodo y
                   privado para tu bienestar.</li>
-                <li class="mb-3 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Atención integral para
-                  una recuperación completa.</li>
+                <!-- <li class="mb-3 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Atención integral para
+                  una recuperación completa.</li> -->
               </ul>
             </div>
             <div class="col-lg-6">
@@ -170,8 +171,8 @@
                   con pacientes satisfechos.</li>
                 <li class="mb-3 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Prevención para evitar
                   complicaciones futuras.</li>
-                <li class="mb-3 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Fácil acceso y contacto
-                  directo para citas.</li>
+                <!-- <li class="mb-3 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Fácil acceso y contacto
+                  directo para citas.</li> -->
               </ul>
             </div>
           </div>
@@ -645,7 +646,7 @@
                     <div class="testimonial-quote">
                       <i class="flaticon-left-quote"></i>
                     </div>
-                    <h6 class="mb-1">Alice Williams</h6>
+                    <h6 class="mb-1" style="color: white !important; font-weight: bold;">Alice Williams</h6>
                     <span>- Mother.</span>
                   </div>
                 </div>
@@ -668,7 +669,7 @@
                     <div class="testimonial-quote">
                       <i class="flaticon-left-quote"></i>
                     </div>
-                    <h6 class="mb-1">Felica Queen</h6>
+                    <h6 class="mb-1" style="color: white !important; font-weight: bold;">Felica Queen</h6>
                     <span>- Cancer client.</span>
                   </div>
                 </div>
@@ -691,7 +692,7 @@
                     <div class="testimonial-quote">
                       <i class="flaticon-left-quote"></i>
                     </div>
-                    <h6 class="mb-1">Paul Flavius</h6>
+                    <h6 class="mb-1" style="color: white !important; font-weight: bold;">Paul Flavius</h6>
                     <span>- Heather.</span>
                   </div>
                 </div>
@@ -714,7 +715,7 @@
                     <div class="testimonial-quote">
                       <i class="flaticon-left-quote"></i>
                     </div>
-                    <h6 class="mb-1">Harry Russell</h6>
+                    <h6 class="mb-1" style="color: white !important; font-weight: bold;">Harry Russell</h6>
                     <span>- Surgery client.</span>
                   </div>
                 </div>

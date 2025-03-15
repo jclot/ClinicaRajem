@@ -17,8 +17,8 @@
       <div class="row align-items-center intro-title">
         <div class="col-12">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index.html"> <i class="fas fa-home"></i> </a></li>
-            <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> contact-us</span></li>
+            <li class="breadcrumb-item"><a th:href="@{/}"> <i class="fas fa-home"></i> </a></li>
+            <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> contacto</span></li>
           </ol>
         </div>
       </div>
@@ -36,9 +36,8 @@
           <!-- Get In Touch -->
           <div class="contact-info">
             <div class="section-title text-sm-start text-center">
-              <h3>Get In Touch With Us</h3>
-              <p>The best way is to develop and follow a plan. Start with your goals in mind and then work backwards to
-                develop the plan.</p>
+              <h3>Contáctanos</h3>
+              <p>Déjanos tu mensaje y nos pondremos en contacto contigo lo antes posible.</p>
             </div>
 
             <!-- Address -->
@@ -47,8 +46,8 @@
                 <i class="flaticon-location"></i>
               </div>
               <div class="feature-item-content">
-                <h4 class="feature-item-title">Address</h4>
-                <span>6580 Allison Turnpike Creminfort, AL 32808-4509</span>
+                <h4 class="feature-item-title">Direccion</h4>
+                <span>Ciudad Quesada, San Carlos, 300 m N, 50 m E y 75 m S del Hogar de Ancianos, Clínica CAOBA</span>
               </div>
             </div>
             <!-- Address -->
@@ -59,9 +58,8 @@
                 <i class="flaticon-call"></i>
               </div>
               <div class="feature-item-content">
-                <h4 class="feature-item-title">Phone</h4>
-                <span>+0123 456 789</span>
-                <span>+704 279 1249</span>
+                <h4 class="feature-item-title">Teléfono</h4>
+                <span>+(506) 8955-4444</span>
               </div>
             </div>
             <!-- Phone -->
@@ -72,9 +70,8 @@
                 <i class="flaticon-email"></i>
               </div>
               <div class="feature-item-content">
-                <h4 class="feature-item-title">Email</h4>
-                <span>support@medileaf.com</span>
-                <span>letstalk@medileaf.com</span>
+                <h4 class="feature-item-title">Correo Electrónico</h4>
+                <span>clinicarajem@gmail.com</span>
               </div>
             </div>
             <!-- Email -->
@@ -85,29 +82,32 @@
           <!-- Contact-form -->
           <div class="contact-form ms-lg-4">
             <div class="section-title">
-              <h3>We'd love to hear from you</h3>
-              <p>The price is something not necessarily defined as financial. It could be time, effort, sacrifice, money
-                or perhaps, something else.</p>
+              <h3 style="text-transform: none;">Nos encantaría saber de ti</h3>
+              <p>Tu bienestar es nuestra prioridad. Contáctanos y con gusto responderemos todas tus consultas o dudas.
+              </p>
             </div>
             <form>
               <div class="row align-items-center">
                 <div class="mb-3 col-md-6">
-                  <input type="text" class="form-control" id="first-name" placeholder="First Name">
+                  <input type="text" class="form-control" id="first-name" placeholder="Nombre">
                 </div>
                 <div class="mb-3 col-md-6">
-                  <input type="email" class="form-control" id="email" placeholder="Email">
+                  <input type="text" class="form-control" id="last-name" placeholder="Apellido">
                 </div>
                 <div class="mb-3 col-md-6">
-                  <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                  <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
                 </div>
                 <div class="mb-3 col-md-6">
-                  <input type="text" class="form-control" id="subject" placeholder="Subject">
+                  <input type="text" class="form-control" id="phone" placeholder="Teléfono">
+                </div>
+                <div class="mb-3 col-md-12">
+                  <input type="text" class="form-control" id="subject" placeholder="Asunto">
                 </div>
                 <div class="mb-3 col-lg-12">
-                  <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                  <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
                 </div>
                 <div class="mb-3 col-sm-12 mb-0">
-                  <button type="submit" class="btn btn-outline-primary">Send Message</button>
+                  <button type="submit" class="btn btn-outline-primary">Enviar Mensaje</button>
                 </div>
               </div>
             </form>
@@ -129,8 +129,8 @@
           <div class="map">
             <!-- iframe START -->
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96873.54747598754!2d-74.01503722010821!3d40.64535309479206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24416947c2109%3A0x82765c7404007886!2sBrooklyn%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1583241765545!5m2!1sen!2sin"
-              style="border:0; width: 100%; height: 100%" allowfullscreen=""></iframe>
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2525.1518385396325!2d-84.43011388363797!3d10.333037047242959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0651bfa5c3449%3A0xa7f5a3b4ff741527!2sCentro%20M%C3%A9dico%20CAOBA!5e0!3m2!1ses!2scr!4v1741901720487!5m2!1ses!2scr"
+              width="100%" height="100%" style="border:0;" allowfullscreen=""></iframe>
             <!-- iframe END -->
           </div>
         </div>

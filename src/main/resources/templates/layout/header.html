@@ -62,14 +62,15 @@
                                     <li><a class="dropdown-item" href="index-shop.html">Home Shop</a></li>
                                 </ul> -->
                             </li>
-                            <li class="dropdown nav-item">
+                            <li class="dropdown nav-item"
+                                th:classappend="${activePage == 'timetable' || activePage == 'workinghours' || activePage == 'appointment'} ? 'active'">
                                 <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Portal Clínico
                                     <i class="far fa-plus-square"></i>
                                 </a>
                                 <ul class="dropdown-menu megamenu dropdown-menu-lg">
                                     <li>
                                         <div class="row">
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-6">
                                                 <h6 class="mb-3 nav-title">General</h6>
                                                 <ul class="list-unstyled mt-lg-3">
                                                     <li><a class="dropdown-item" href="about-us.html">Sobre Nosotros</a>
@@ -81,19 +82,21 @@
                                                     <li><a class="dropdown-item" href="before-after.html">Before After</a></li> -->
                                                 </ul>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-6">
                                                 <h6 class="mb-3 nav-title">Horarios</h6>
                                                 <ul class="list-unstyled mt-lg-3">
-                                                    <li><a class="dropdown-item" href="pricing.html">Citas</a></li>
-                                                    <li><a class="dropdown-item" href="faqs.html">Calendario</a></li>
-                                                    <li><a class="dropdown-item" href="appointment.html">Horarios</a>
+                                                    <li><a class="dropdown-item" th:href="@{/appointment}">Citas</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" th:href="@{/timetable}">Calendario</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item" th:href="@{/workinghours}">Horarios</a>
                                                     </li>
                                                     <!-- <li><a class="dropdown-item" href="cost-calculator.html">Cost Calculator</a></li>
                                                     <li><a class="dropdown-item" href="timetable.html">Timetable</a></li>
                                                     <li><a class="dropdown-item" href="working-hours.html">Working Hours</a></li> -->
                                                 </ul>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <!-- <div class="col-sm-4">
                                                 <h6 class="mb-3 nav-title">Legal</h6>
                                                 <ul class="list-unstyled mt-lg-3">
                                                     <li><a class="dropdown-item" href="login.html">Política de
@@ -101,16 +104,17 @@
                                                     <li><a class="dropdown-item" href="register.html">Términos y
                                                             Condiciones</a></li>
                                                     <li><a class="dropdown-item" href="faqs.html">FAQ</a></li>
-                                                    <!-- <li><a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
+                                                    <li><a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
                                                     <li><a class="dropdown-item" href="terms-and-conditions.html">T&C</a></li>
-                                                    <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li> -->
+                                                    <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown nav-item">
+                            <li class="dropdown nav-item"
+                                th:classappend="${activePage == 'service' || activePage == 'departments'} ? 'active'">
                                 <a href="javascript:void(0)" class="nav-link" data-bs-toggle="dropdown">Servicios<i
                                         class="far fa-plus-square"></i></a>
                                 <ul class="dropdown-menu">
