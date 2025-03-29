@@ -10,10 +10,12 @@ public class ClinicarajemApplication {
 
 	public static void main(String[] args) {
 
-		Dotenv dotenv = Dotenv.configure().load();
-		dotenv.entries().forEach(entry -> {
-			System.setProperty(entry.getKey(), entry.getValue());
-		});
+		if (System.getenv("SPRING_PROFILES_ACTIVE") == null) {
+            Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
+            dotenv.entries().forEach(entry -> 
+                System.setProperty(entry.getKey(), entry.getValue())
+            );
+        }
 		SpringApplication.run(ClinicarajemApplication.class, args);
 	}
 
