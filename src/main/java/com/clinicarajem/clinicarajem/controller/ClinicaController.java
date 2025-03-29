@@ -22,16 +22,6 @@ public class ClinicaController {
         return "services/service";
     }
 
-    @GetMapping("/department")
-    public String departments() {
-        return "department/departments";
-    }
-
-    @GetMapping("/services/service-detail")
-    public String serviceDetail() {
-        return "services/service-detail";
-    }
-
     @GetMapping("/contact")
     public String contact() {
         return "contact/contact-us";
@@ -43,11 +33,6 @@ public class ClinicaController {
         return "appointment/appointment";
     }
 
-    @GetMapping("/timetable")
-    public String timetable() {
-        return "timetable/timetable";
-    }
-
     @GetMapping("/workinghours")
     public String workinghours() {
         return "workinghours/workinghours";
@@ -56,6 +41,21 @@ public class ClinicaController {
     @GetMapping("/error404")
     public String error404() {
         return "error404";
+    }
+
+    @GetMapping("/gallery")
+    public String gallery() {
+        return "gallery/gallery";
+    }
+
+    @GetMapping("/team-single")
+    public String teamSingle() {
+        return "team/team-single";
+    }
+
+    @GetMapping("/faqs")
+    public String faqs() {
+        return "legal/faqs";
     }
 
 }

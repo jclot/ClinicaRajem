@@ -86,25 +86,26 @@
               <p>Tu bienestar es nuestra prioridad. Contáctanos y con gusto responderemos todas tus consultas o dudas.
               </p>
             </div>
-            <form>
+            <form id="contactForm" onsubmit="submitFormContact(event)">
               <div class="row align-items-center">
                 <div class="mb-3 col-md-6">
-                  <input type="text" class="form-control" id="first-name" placeholder="Nombre">
+                  <input type="text" class="form-control" id="first-name-contact" placeholder="Nombre" required>
                 </div>
                 <div class="mb-3 col-md-6">
-                  <input type="text" class="form-control" id="last-name" placeholder="Apellido">
+                  <input type="text" class="form-control" id="last-name-contact" placeholder="Apellido" required>
                 </div>
                 <div class="mb-3 col-md-6">
-                  <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
+                  <input type="email" class="form-control" id="email-contact" placeholder="Correo Electrónico" required>
                 </div>
                 <div class="mb-3 col-md-6">
-                  <input type="text" class="form-control" id="phone" placeholder="Teléfono">
+                  <input type="text" class="form-control" id="phone-contact" placeholder="Teléfono" required>
                 </div>
                 <div class="mb-3 col-md-12">
-                  <input type="text" class="form-control" id="subject" placeholder="Asunto">
+                  <input type="text" class="form-control" id="subject-contact" placeholder="Asunto" required>
                 </div>
                 <div class="mb-3 col-lg-12">
-                  <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+                  <textarea class="form-control" rows="5" id="message-contact" placeholder="Mensaje"
+                    readonly></textarea>
                 </div>
                 <div class="mb-3 col-sm-12 mb-0">
                   <button type="submit" class="btn btn-outline-primary">Enviar Mensaje</button>
@@ -148,16 +149,7 @@
 
   <!--=================================
     Javascript -->
-
-  <!-- JS Global Compulsory (Do not remove)-->
-  <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="js/popper/popper.min.js"></script>
-  <script src="js/bootstrap/bootstrap.min.js"></script>
-
-  <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
-
-  <!-- Template Scripts (Do not remove)-->
-  <script src="js/custom.js"></script>
+  <div th:replace="~{fragments :: common-scripts}"></div>
 
 </body>
 

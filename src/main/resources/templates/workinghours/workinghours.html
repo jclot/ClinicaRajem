@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" th:with="activePage='workinghours'">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="activePage='workinghours'">
 
 <head th:replace="~{layout/head :: head}"></head>
 
@@ -42,17 +42,17 @@
             <!-- Work Time -->
             <div class="widget">
               <div class="widget-title">
-                <h4>Work Time</h4>
+                <h4>Horario de trabajo</h4>
               </div>
               <div class="widget-worktime">
                 <ul class="list-unstyled list-style list-style-underline mb-0">
-                  <li><span class="day">Monday</span><span class="time">10:00 - 07:30</span></li>
-                  <li><span class="day">Tuesday</span><span class="time">10:00 - 07:30</span></li>
-                  <li><span class="day">Wednesday</span><span class="time">10:00 - 07:30</span></li>
-                  <li><span class="day">Thursday</span><span class="time">10:00 - 07:30</span></li>
-                  <li><span class="day">Friday</span><span class="time">10:00 - 07:30</span></li>
-                  <li><span class="day">Saturday</span><span class="time">10:00 - 07:30</span></li>
-                  <li><span class="day">Sunday</span><span class="time">Close</span></li>
+                  <li><span class="day">Lunes</span><span class="time">9am - 7pm</span></li>
+                  <li><span class="day">Martes</span><span class="time">9am - 7pm</span></li>
+                  <li><span class="day">Míercoles</span><span class="time">9am - 5pm</span></li>
+                  <li><span class="day">Jueves</span><span class="time">9am - 7pm</span></li>
+                  <li><span class="day">Viernes</span><span class="time">9am - 5pm</span></li>
+                  <li><span class="day">Sábado</span><span class="time">Cerrado</span></li>
+                  <li><span class="day">Domingo</span><span class="time">Cerrado</span></li>
                 </ul>
               </div>
             </div>
@@ -62,8 +62,8 @@
             <div class="widget bg-primary" style="background-image: url(images/pattern.png);">
               <div class="widget-services-care text-center">
                 <div class="services-care-icon mb-3"><i class="flaticon-support"></i></div>
-                <h3 class="services-care-title text-white mb-4">Medical Care Services</h3>
-                <a href="contact-us.html" class="btn btn-white">Contact us</a>
+                <h3 class="services-care-title text-white mb-4">Servicios de atención médica</h3>
+                <a th:href="@{/contact}" class="btn btn-white">Contáctanos</a>
               </div>
             </div>
             <!-- Care Services -->
@@ -72,23 +72,24 @@
         <div class="col-lg-8 mt-lg-0 mt-5">
           <div class="ms-lg-5">
             <div class="section-title">
-              <h2>Your Community Hospital Providing Generations of Caring.</h2>
-              <p>For those of you who are serious about having more, doing more, giving more and being more, success is
-                achievable with some understanding of what to do, some discipline around planning and execution of those
-                plans and belief that you can achieve your desires.</p>
+              <h2>Excelencia en el cuidado integral</h2>
+              <p>Cultivamos el bienestar personal con una atención humana y comprometida. Nuestra filosofía se basa en
+                la empatía, la comunicación clara y la dedicación total para transformar la vida de nuestros pacientes.
+                Cada intervención se realiza con una mezcla de experiencia, sensibilidad y pasión, asegurando un cuidado
+                integral que potencia la confianza y la superación personal.</p>
             </div>
             <div class="row">
               <!-- Service-01 START -->
               <div class="col-md-6 mb-5">
                 <div class="feature-items">
                   <div class="feature-icon">
-                    <i class="flaticon-ambulance"></i>
+                    <i class='fas fa-hand-holding-heart'></i>
                   </div>
                   <div class="feature-content">
-                    <h6>Fast Ambulance</h6>
-                    <p class="mb-0">So how do we get clarity? Simply by asking ourselves lots of questions: What do I
-                      really want? What does success look like to me? Why do I want a particular thing? How will this
-                      achievement change my life?</p>
+                    <h6>Empatía y escucha activa</h6>
+                    <p class="mb-0">Fomentamos un ambiente cálido donde cada paciente se sienta comprendido y
+                      acompañado. Nos centramos en escuchar detalladamente, entendiendo las necesidades individuales
+                      para ofrecer soluciones que respeten la singularidad independientemente de cada persona.</p>
                   </div>
                 </div>
               </div>
@@ -98,13 +99,13 @@
               <div class="col-md-6 mb-5">
                 <div class="feature-items">
                   <div class="feature-icon">
-                    <i class="flaticon-liquid-soap"></i>
+                    <i class='fas fa-people-carry'></i>
                   </div>
                   <div class="feature-content">
-                    <h6>Care Advice</h6>
-                    <p class="mb-0">The best way is to develop and follow a plan. Start with your goals in mind and then
-                      work backwards to develop the plan. What steps are required to get you to the goals? Make the plan
-                      as detailed as possible.</p>
+                    <h6>Compromiso y profesionalismo</h6>
+                    <p class="mb-0">Nos distinguimos por una dedicación inquebrantable hacia el bienestar, combinando la
+                      experticia técnica con un profundo sentido de responsabilidad. La seriedad y el rigor en cada
+                      tratamiento garantizan la mejora continua y el respeto por los procesos de cada persona.</p>
                   </div>
                 </div>
               </div>
@@ -114,13 +115,13 @@
               <div class="col-md-6 mb-5 mb-md-0">
                 <div class="feature-items">
                   <div class="feature-icon">
-                    <i class="flaticon-microscope"></i>
+                    <i class='fas fa-search'></i>
                   </div>
                   <div class="feature-content">
-                    <h6>Modern Laboratory</h6>
-                    <p class="mb-0">Try to visualize and then plan for, every possible setback. Commit the plan to paper
-                      and then keep it with you at all times. Review it regularly and ensure that every step takes you
-                      closer to your Vision and Goals.</p>
+                    <h6>Innovación y adaptabilidad</h6>
+                    <p class="mb-0">Apostamos por la evolución constante y la incorporación de métodos avanzados que se
+                      adaptan a las demandas cambiantes de la salud. Nuestra actitud abierta y flexible nos permite
+                      ajustar las intervenciones para alcanzar resultados óptimos en cada uno de los casos.</p>
                   </div>
                 </div>
               </div>
@@ -130,13 +131,14 @@
               <div class="col-md-6 ">
                 <div class="feature-items">
                   <div class="feature-icon">
-                    <i class="flaticon-transfusion"></i>
+                    <i class='fas fa-clipboard-list'></i>
                   </div>
                   <div class="feature-content">
-                    <h6>Heart Surgery</h6>
-                    <p class="mb-0">Along with your plans, you should consider developing an action orientation that
-                      will keep you motivated to move forward at all times. This requires a little self-discipline, but
-                      is a crucial component to achievement of any kind.</p>
+                    <h6>Cuidado integral y personalizado</h6>
+                    <p class="mb-0">Ofrecemos un enfoque holístico que integra la atención física y emocional,
+                      asegurando una respuesta personalizada en cada tratamiento. La dedicación en el seguimiento y la
+                      atención individualizada refuerzan el compromiso de acompañarte en cada paso hacia una vida plena.
+                    </p>
                   </div>
                 </div>
               </div>

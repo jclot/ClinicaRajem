@@ -63,7 +63,7 @@
                                 </ul> -->
                             </li>
                             <li class="dropdown nav-item"
-                                th:classappend="${activePage == 'timetable' || activePage == 'workinghours' || activePage == 'appointment'} ? 'active'">
+                                th:classappend="${activePage == 'timetable' || activePage == 'workinghours' || activePage == 'appointment' || activePage == 'team-single' || activePage == 'gallery' || activePage == 'faqs'} ? 'active'">
                                 <a class="nav-link" href="javascript:void(0)" data-bs-toggle="dropdown">Portal Clínico
                                     <i class="far fa-plus-square"></i>
                                 </a>
@@ -73,10 +73,11 @@
                                             <div class="col-sm-6">
                                                 <h6 class="mb-3 nav-title">General</h6>
                                                 <ul class="list-unstyled mt-lg-3">
-                                                    <li><a class="dropdown-item" href="about-us.html">Sobre Nosotros</a>
+                                                    <li><a class="dropdown-item" th:href="@{/team-single}">Sobre mí</a>
                                                     </li>
-                                                    <li><a class="dropdown-item" href="about-me.html">Sobre mí</a></li>
-                                                    <li><a class="dropdown-item" href="team.html">Galería</a></li>
+                                                    <li><a class="dropdown-item" th:href="@{/gallery}">Galería</a></li>
+                                                    <li><a class="dropdown-item" th:href="@{/faqs}">Preguntas
+                                                            frecuentes</a></li>
                                                     <!-- <li><a class="dropdown-item" href="team-single.html">Team Single</a></li>
                                                     <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
                                                     <li><a class="dropdown-item" href="before-after.html">Before After</a></li> -->
@@ -113,15 +114,13 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown nav-item"
-                                th:classappend="${activePage == 'service' || activePage == 'departments'} ? 'active'">
-                                <a href="javascript:void(0)" class="nav-link" data-bs-toggle="dropdown">Servicios<i
-                                        class="far fa-plus-square"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" th:href="@{/services}">Servicio</a></li>
-                                    <li><a class="dropdown-item" th:href="@{/department}">Departamentos</a></li>
-                                    <!-- <li><a class="dropdown-item" href="service-detail.html">Service Detail</a></li> -->
-                                </ul>
+                            <li class="nav-item" th:classappend="${activePage == 'service'} ? 'active'">
+                                <a th:href="@{/services}" class="nav-link">Servicios</a>
+                                <!-- <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" th:href="@{/services}">Servicios</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/department}">Departamentos</a></li> -->
+                                <!-- <li><a class="dropdown-item" href="service-detail.html">Service Detail</a></li> -->
+                                <!-- </ul> -->
                             </li>
                             <!-- <li class="dropdown nav-item">
                                 <a href="#" class="nav-link" data-bs-toggle="dropdown">Blog<i

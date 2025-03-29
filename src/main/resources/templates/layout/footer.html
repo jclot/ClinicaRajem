@@ -26,18 +26,16 @@
                     <h6 class="text-primary">Enlaces Útiles</h6>
                     <div class="footer-useful-List">
                         <ul class="list-unstyled mb-0">
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="about-us.html">Sobre Nosotros</a></li>
-                            <li><a href="team.html">Sobre Mí</a></li>
-                            <li><a href="before-after.html">Galería</a></li>
-                            <li><a href="cost-calculator.html">Servicio</a></li>
+                            <li><a th:href="@{/faqs}">FAQ</a></li>
+                            <li><a th:href="@{/team-single}">Sobre Mí</a></li>
+                            <li><a th:href="@{/gallery}">Galería</a></li>
+                            <li><a th:href="@{/services}">Servicio</a></li>
                         </ul>
                         <ul class="list-unstyled mb-0">
-                            <li><a href="appointment.html">Citas</a></li>
-                            <li><a href="gallery.html">Calendario</a></li>
-                            <li><a href="timetable.html">Horarios</a></li>
-                            <li><a href="departments.html">Departamentos</a></li>
-                            <li><a href="contact-us.html">Contacto</a></li>
+                            <li><a th:href="@{/appointment}">Citas</a></li>
+                            <li><a th:href="@{/timetable}">Calendario</a></li>
+                            <li><a th:href="@{/workinghours}">Horarios</a></li>
+                            <li><a th:href="@{/contact}">Contacto</a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,18 +44,23 @@
                     <div class="footer-contact-info">
                         <ul class="list-unstyled mb-0">
                             <li><i class="fas fa-fw fa-map-marker-alt text-primary"></i><span>Clínica CAOBA, Ciudad
-                                    Quesada, San Carlos.</span></li>
+                                    Quesada, San Carlos. <a
+                                        href="https://ul.waze.com/ul?venue_id=180617319.1805976585.25056475&overview=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+                                        target="_blank" rel="noopener noreferrer">Abrir Waze</a></span></li>
                             <li><i class="fas fa-fw fa-phone-alt text-primary"></i><span>+(506) 8955-4444</span></li>
                         </ul>
                     </div>
                     <div class="footer-subscribe">
-                        <p>Suscríbase a nuestro boletín para recibir las últimas noticias y ofertas.</p>
-                        <form>
+                        <p>Suscríbete a nuestro boletín para recibir las últimas noticias y ofertas.</p>
+                        <form th:action="@{/subscribe}" method="post">
                             <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Correo Electrónico" required="">
+                                <input type="email" class="form-control" placeholder="Correo Electrónico" name="email"
+                                    required="">
                             </div>
                             <button type="submit" class="btn btn-primary"><i class="far fa-paper-plane"></i></button>
                         </form>
+                        <div th:if="${message}" class="alert alert-success" th:text="${message}"></div>
+                        <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
@@ -83,22 +86,22 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-6 text-center copyright text-md-start mb-3 mb-md-0">
+                    <div class="col-12 text-center copyright mb-3 mb-md-0">
                         <p class="mb-0"> &copy; Copyright <span id="copyright">
                                 <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-                            </span> <a href="index.html"> medileaf (Julian Clot) </a> Todos los derechos reservados.</p>
+                            </span> <a href="https://github.com/jclot/" target="_blank" rel="noopener noreferrer">
+                                medileaf (Julian Clot) </a> Todos los derechos reservados.</p>
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
+                    <!-- <div class="col-md-6 text-center text-md-end">
                         <div class="">
                             <ul class="list-unstyled list-inline mb-0">
                                 <li class="list-inline-item mb-0"><a href="terms-and-conditions.html">Términos y
                                         Condiciones</a></li>
-                                <li class="list-inline-item mb-0"><a href="#">FAQ</a></li>
                                 <li class="list-inline-item"><a href="privacy-policy.html">Política de Privacidad</a>
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

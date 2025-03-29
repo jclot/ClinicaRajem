@@ -6,7 +6,6 @@ public class Canton {
     private String nombre;
     private Map<String, String> distritos;
 
-    // Getters and setters
     public String getNombre() {
         return nombre;
     }
@@ -14,7 +13,6 @@ public class Canton {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
 
     public Map<String, String> getDistritos() {
         return distritos;

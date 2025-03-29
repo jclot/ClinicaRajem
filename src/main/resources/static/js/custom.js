@@ -1,8 +1,8 @@
 /*
 
 Template: Medileaf - Health and Medical HTML Template
-Author: potenzaglobalsolutions
-Design and Developed by: potenzaglobalsolutions.com
+Author: CLINICARAJEMglobalsolutions
+Design and Developed by: CLINICARAJEMglobalsolutions.com
 
 NOTE: This file contains all scripts for the actual Template.
 
@@ -16,6 +16,7 @@ NOTE: This file contains all scripts for the actual Template.
 :: Sticky
 :: Tooltip
 ::counter
+::FancyBox
 ::Owl carousel
 :: Swiper slider
 ::Slickslider
@@ -32,11 +33,11 @@ NOTE: This file contains all scripts for the actual Template.
 ======================================
 [ End table content ]
 ======================================*/
-//POTENZA var
+//CLINICARAJEM var
 
 (function ($) {
   "use strict";
-  var POTENZA = {};
+  var CLINICARAJEM = {};
 
   /*************************
     Predefined Variables
@@ -55,7 +56,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
         Menu
     *************************/
-  POTENZA.dropdownmenu = function () {
+  CLINICARAJEM.dropdownmenu = function () {
     if ($('.navbar').exists()) {
       $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
         if (!$(this).next().hasClass('show')) {
@@ -75,7 +76,7 @@ NOTE: This file contains all scripts for the actual Template.
            Sticky
   *************************/
 
-  POTENZA.isSticky = function () {
+  CLINICARAJEM.isSticky = function () {
     $(window).scroll(function () {
       if ($(this).scrollTop() > 150) {
         $('.header-sticky').addClass('is-sticky');
@@ -90,7 +91,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
        Tooltip
   *************************/
-  POTENZA.Tooltip = function () {
+  CLINICARAJEM.Tooltip = function () {
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl)
@@ -100,7 +101,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
         Popover
   *************************/
-  POTENZA.Popover = function () {
+  CLINICARAJEM.Popover = function () {
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
       return new bootstrap.Popover(popoverTriggerEl)
@@ -110,7 +111,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
          Counter
   *************************/
-  POTENZA.counters = function () {
+  CLINICARAJEM.counters = function () {
     var counter = jQuery(".counter");
     if (counter.length > 0) {
       $counter.each(function () {
@@ -123,9 +124,14 @@ NOTE: This file contains all scripts for the actual Template.
   };
 
   /*************************
+      Fancy Box
+ *************************/
+
+
+  /*************************
        Owl carousel
   *************************/
-  POTENZA.carousel = function () {
+  CLINICARAJEM.carousel = function () {
     var owlslider = jQuery("div.owl-carousel");
     if (owlslider.length > 0) {
       owlslider.each(function () {
@@ -178,7 +184,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
         Swiper slider
   *************************/
-  POTENZA.swiperAnimation = function () {
+  CLINICARAJEM.swiperAnimation = function () {
     var siperslider = jQuery(".swiper-container");
     if (siperslider.length > 0) {
       var swiperAnimation = new SwiperAnimation();
@@ -215,7 +221,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
         Slickslider
   *************************/
-  POTENZA.slickslider = function () {
+  CLINICARAJEM.slickslider = function () {
     if ($('.slider-for').exists()) {
       $('.slider-for').slick({
         slidesToShow: 1,
@@ -237,7 +243,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
       Magnific Popup
   *************************/
-  POTENZA.mediaPopups = function () {
+  CLINICARAJEM.mediaPopups = function () {
     if ($(".popup-single").exists() || $(".popup-gallery").exists() || $('.modal-onload').exists() || $(".popup-youtube, .popup-vimeo, .popup-gmaps").exists()) {
       if ($(".popup-single").exists()) {
         $('.popup-single').magnificPopup({
@@ -373,7 +379,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
       Shuffle
   *************************/
-  POTENZA.shuffle = function () {
+  CLINICARAJEM.shuffle = function () {
     if ($('.my-shuffle-container').exists()) {
       var Shuffle = window.Shuffle;
       var element = document.querySelector('.my-shuffle-container');
@@ -404,8 +410,12 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
         Datetimepicker
   *************************/
-  POTENZA.datetimepickers = function () {
+
+
+  CLINICARAJEM.datetimepickers = function () {
+
     if ($('.datetimepickers').exists()) {
+
       function aplicarRestriccionesHorarias(fecha) {
         if (!fecha) return;
 
@@ -440,6 +450,7 @@ NOTE: This file contains all scripts for the actual Template.
       }
 
       $('#datetimepicker-01, #datetimepicker-02').datetimepicker({
+        locale: moment.locale('es'),
         format: 'L',
         minDate: moment().startOf('day'),
         daysOfWeekDisabled: [0, 6],
@@ -468,7 +479,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
       Select2
   *************************/
-  POTENZA.select2 = function () {
+  CLINICARAJEM.select2 = function () {
     if ($('.basic-select').exists()) {
       var select = jQuery(".basic-select");
       if (select.length > 0) {
@@ -481,7 +492,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
       Range Slider
   *************************/
-  POTENZA.rangesliders = function () {
+  CLINICARAJEM.rangesliders = function () {
     if ($('.cost-price , .shop-price-slider').exists()) {
       var rangeslider = jQuery(".rangeslider-wrapper");
       $("#cost-price-1").ionRangeSlider({
@@ -511,7 +522,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
            Countdown
   *************************/
-  POTENZA.countdownTimer = function () {
+  CLINICARAJEM.countdownTimer = function () {
     if ($countdownTimer.exists()) {
       $countdownTimer.downCount({
         date: '12/25/2022 12:00:00', // Month/Date/Year HH:MM:SS
@@ -523,7 +534,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
        Back to top
   *************************/
-  POTENZA.goToTop = function () {
+  CLINICARAJEM.goToTop = function () {
     var $goToTop = $('#back-to-top');
     $goToTop.hide();
     $window.scroll(function () {
@@ -541,7 +552,7 @@ NOTE: This file contains all scripts for the actual Template.
   /*************************
           Progressbar
   *************************/
-  POTENZA.progressBar = function () {
+  CLINICARAJEM.progressBar = function () {
     if ($progressBar.exists()) {
       $progressBar.each(function (i, elem) {
         var $elem = $(this),
@@ -571,30 +582,30 @@ NOTE: This file contains all scripts for the actual Template.
   };
 
   /****************************************************
-       POTENZA Window load and functions
+       CLINICARAJEM Window load and functions
   ****************************************************/
   //Window load functions
   $window.on("load", function () {
-    POTENZA.shuffle(),
-      POTENZA.progressBar();
+    CLINICARAJEM.shuffle(),
+      CLINICARAJEM.progressBar();
   });
 
   //Document ready functions
   $document.ready(function () {
-    POTENZA.counters(),
-      POTENZA.slickslider(),
-      POTENZA.datetimepickers(),
-      POTENZA.select2(),
-      POTENZA.dropdownmenu(),
-      POTENZA.carousel(),
-      POTENZA.isSticky(),
-      POTENZA.Tooltip(),
-      POTENZA.Popover(),
-      POTENZA.goToTop(),
-      POTENZA.countdownTimer(),
-      POTENZA.mediaPopups(),
-      POTENZA.swiperAnimation(),
-      POTENZA.rangesliders();
+    CLINICARAJEM.counters(),
+      CLINICARAJEM.slickslider(),
+      CLINICARAJEM.datetimepickers(),
+      CLINICARAJEM.select2(),
+      CLINICARAJEM.dropdownmenu(),
+      CLINICARAJEM.carousel(),
+      CLINICARAJEM.isSticky(),
+      CLINICARAJEM.Tooltip(),
+      CLINICARAJEM.Popover(),
+      CLINICARAJEM.goToTop(),
+      CLINICARAJEM.countdownTimer(),
+      CLINICARAJEM.mediaPopups(),
+      CLINICARAJEM.swiperAnimation(),
+      CLINICARAJEM.rangesliders();
   });
 
 })(jQuery);

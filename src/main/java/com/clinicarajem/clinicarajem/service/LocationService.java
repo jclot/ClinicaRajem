@@ -20,7 +20,6 @@ public class LocationService implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         try {
-            System.out.println("Cargando provincias desde JSON...");
             ClassPathResource resource = new ClassPathResource(
                     "static/json/provincias_cantones_distritos_costa_rica.json");
             ObjectMapper mapper = new ObjectMapper();
@@ -29,7 +28,6 @@ public class LocationService implements InitializingBean {
             JsonNode provinciasNode = root.get("provincias");
             provinciasNode.fields().forEachRemaining(entry -> {
                 String provinciaId = entry.getKey();
-                System.out.println("Cargando provincia ID: " + provinciaId);
                 JsonNode provinciaNode = entry.getValue();
 
                 Provincia provincia = new Provincia();
@@ -39,7 +37,6 @@ public class LocationService implements InitializingBean {
                 JsonNode cantonesNode = provinciaNode.get("cantones");
                 cantonesNode.fields().forEachRemaining(cantonEntry -> {
                     String cantonId = cantonEntry.getKey();
-                    System.out.println("Cargando cantón ID: " + cantonId + " en provincia " + provinciaId);
                     JsonNode cantonNode = cantonEntry.getValue();
 
                     Canton canton = new Canton();
@@ -48,7 +45,6 @@ public class LocationService implements InitializingBean {
                     Map<String, String> distritos = new LinkedHashMap<>();
                     JsonNode distritosNode = cantonNode.get("distritos");
                     distritosNode.fields().forEachRemaining(distritoEntry -> {
-                        System.out.println("Cargando distrito ID: " + distritoEntry.getKey());
                         String distritoId = distritoEntry.getKey();
                         String distritoNombre = distritoEntry.getValue().asText();
                         distritos.put(distritoId, distritoNombre);
@@ -65,7 +61,6 @@ public class LocationService implements InitializingBean {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         System.out.println("Total provincias cargadas: " + provincias.size());
     }
 

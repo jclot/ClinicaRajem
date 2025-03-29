@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="activePage='faqs'">
+
+<head th:replace="layout/head :: head"></head>
+
+<body>
+
+  <!--=================================
+    header -->
+  <header th:replace="layout/header :: header"></header>
+  <!--=================================
+    header -->
+
+  <!--=================================
+    banner -->
+  <section class="inner-banner bg-light">
+    <div class="container">
+      <div class="row align-items-center intro-title">
+        <div class="col-12">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a th:href="@{/}"> <i class="fas fa-home"></i> </a></li>
+            <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="javascript:void(0)">portal
+                clínico</a>
+            </li>
+            <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> preguntas frecuentes </span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=================================
+    banner -->
+
+  <!--=================================
+    Faqs -->
+  <section class="space-pt">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-5 col-lg-4 mb-4 mb-md-0 align-self-end">
+          <img class="img-fluid" src="images/about/04.png" alt="">
+        </div>
+        <div class="col-md-7 col-lg-8 mb-5 mb-md-0">
+          <!-- Accordion -->
+          <div class="accordion mb-5" id="accordion">
+
+            <!-- Accordion-01 START -->
+            <div class="card">
+              <div class=" accordion-icon card-header" id="headingOne">
+                <h5 class="accordion-title mb-0">
+                  <button class="btn btn-link d-flex align-items-center ms-auto" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">01. What does success
+                    look like to me?</button>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse show accordion-content" aria-labelledby="headingOne"
+                data-bs-parent="#accordion">
+                <div class="card-body">
+                  <p>Motivation is not an accident or something that someone else can give you — you are the only one
+                    with the power to motivate you. Motivation cannot be an external force, it must come from within as
+                    the natural product of your desire to achieve something and your belief that you are capable to
+                    succeed at your goal. Success is something of which we all want more.</p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Get the oars in the
+                      water and start rowing</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Success is
+                      something of which we all want more.</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Execution is the
+                      single biggest factor in achievement</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>The best way is to
+                      develop and follow a plan.</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Most people believe
+                      that success is difficult.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion-01 END -->
+
+            <!-- Accordion-02 START -->
+            <div class="card">
+              <div class=" accordion-icon card-header" id="headingTwo">
+                <h5 class="accordion-title mb-0">
+                  <button class="btn btn-link d-flex align-items-center ms-auto collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">02. What do I really
+                    want?</button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse accordion-content" aria-labelledby="headingTwo"
+                data-bs-parent="#accordion">
+                <div class="card-body">
+                  <p>Motivation is not an accident or something that someone else can give you — you are the only one
+                    with the power to motivate you. Motivation cannot be an external force, it must come from within as
+                    the natural product of your desire to achieve something and your belief that you are capable to
+                    succeed at your goal. Success is something of which we all want more.</p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Get the oars in the
+                      water and start rowing</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Success is
+                      something of which we all want more.</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Execution is the
+                      single biggest factor in achievement</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>The best way is to
+                      develop and follow a plan.</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Most people believe
+                      that success is difficult.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion-02 END -->
+
+            <!-- Accordion-03 START -->
+            <div class="card">
+              <div class=" accordion-icon card-header" id="headingthree">
+                <h5 class="accordion-title mb-0">
+                  <button class="btn btn-link d-flex align-items-center ms-auto collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#collapsethree" aria-expanded="false" aria-controls="collapsethree">03. Can the
+                    particular activity be done later?</button>
+                </h5>
+              </div>
+              <div id="collapsethree" class="collapse accordion-content" aria-labelledby="headingthree"
+                data-bs-parent="#accordion">
+                <div class="card-body">
+                  <p>Motivation is not an accident or something that someone else can give you — you are the only one
+                    with the power to motivate you. Motivation cannot be an external force, it must come from within as
+                    the natural product of your desire to achieve something and your belief that you are capable to
+                    succeed at your goal. Success is something of which we all want more.</p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Get the oars in the
+                      water and start rowing</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Success is
+                      something of which we all want more.</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Execution is the
+                      single biggest factor in achievement</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>The best way is to
+                      develop and follow a plan.</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Most people believe
+                      that success is difficult.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion-03 END -->
+
+            <!-- Accordion-04 START -->
+            <div class="card">
+              <div class=" accordion-icon card-header" id="headingfour">
+                <h5 class="accordion-title mb-0">
+                  <button class="btn btn-link d-flex align-items-center ms-auto collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">04. Why is clarity
+                    so important?</button>
+                </h5>
+              </div>
+              <div id="collapsefour" class="collapse accordion-content" aria-labelledby="headingfour"
+                data-bs-parent="#accordion">
+                <div class="card-body">
+                  <p>Motivation is not an accident or something that someone else can give you — you are the only one
+                    with the power to motivate you. Motivation cannot be an external force, it must come from within as
+                    the natural product of your desire to achieve something and your belief that you are capable to
+                    succeed at your goal. Success is something of which we all want more.</p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Get the oars in the
+                      water and start rowing</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Success is
+                      something of which we all want more.</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Execution is the
+                      single biggest factor in achievement</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>The best way is to
+                      develop and follow a plan.</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Most people believe
+                      that success is difficult.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion-04 END -->
+
+            <!-- Accordion-05 START -->
+            <div class="card">
+              <div class=" accordion-icon card-header" id="headingfive">
+                <h5 class="accordion-title mb-0">
+                  <button class="btn btn-link d-flex align-items-center ms-auto collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">05. Can the
+                    particular activity be done later?</button>
+                </h5>
+              </div>
+              <div id="collapsefive" class="collapse accordion-content" aria-labelledby="headingfive"
+                data-bs-parent="#accordion">
+                <div class="card-body">
+                  <p>Motivation is not an accident or something that someone else can give you — you are the only one
+                    with the power to motivate you. Motivation cannot be an external force, it must come from within as
+                    the natural product of your desire to achieve something and your belief that you are capable to
+                    succeed at your goal. Success is something of which we all want more.</p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Get the oars in the
+                      water and start rowing</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Success is
+                      something of which we all want more.</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Execution is the
+                      single biggest factor in achievement</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>The best way is to
+                      develop and follow a plan.</li>
+                    <li class="mb-2 d-flex"><i class="far fa-plus-square pe-2 text-primary mt-1"></i>Most people believe
+                      that success is difficult.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Accordion-05 END -->
+          </div>
+          <!-- Accordion -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=================================
+    Faqs -->
+
+  <!--=================================
+    Schedule -->
+  <section class="space-pt mb-lg-n6 mb-md-n5 pb-0 pb-sm-4 pb-lg-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="schedule shadow">
+            <div class="row g-0">
+              <div class="col-lg-4">
+                <div class="schedule-morden bg-white">
+                  <div class="icon">
+                    <i class="flaticon-emergency-call"></i>
+                  </div>
+                  <div class="schedule-morden-content">
+                    <h6>Número de contacto</h6>
+                    <span class="phone-number h4">+(506) 8955-4444 </span>
+                    <p class="mb-0">Comunícate con nosotros para agendar tu cita o resolver cualquier duda. Estamos aquí
+                      para ayudarte a recuperar tu bienestar.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="schedule-morden bg-white">
+                  <div class="icon">
+                    <i class="flaticon-clock"></i>
+                  </div>
+                  <div class="schedule-morden-content">
+                    <h6>Horarios de atención</h6>
+                    <div class="opening-hourse">
+                      <ul class="list-unstyled">
+                        <li>
+                          <span>Lunes, Martes y Jueves</span>
+                          <div class="time"> 09am - 7pm </div>
+                        </li>
+                        <li>
+                          <span>Miércoles y Viernes</span>
+                          <div class="time"> 09am - 5pm </div>
+                        </li>
+                        <li>
+                          <span>Sábado y Domingo</span>
+                          <div class="time"> Cerrado </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="schedule-morden last bg-white">
+                  <div class="icon">
+                    <i class="flaticon-calendar"></i>
+                  </div>
+                  <div class="schedule-morden-content">
+                    <h6>Tabla de horario</h6>
+                    <p class="mb-4">Consulta nuestro horario especifico y agenda tu cita con la doctora. Encuentra el
+                      momento que mejor se adapte a ti.</p>
+                    <a class="btn btn-outline-primary" th:href="@{/timetable}"><i class="fa fa-address-book"></i>Ver
+                      Tabla</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=================================
+    Schedule -->
+
+  <!--=================================
+    footer -->
+  <footer th:replace="~{layout/footer :: footer('space-lg-pt bg-light footer')}"></footer>
+  <!--=================================
+    footer -->
+
+  <!--=================================
+    Javascript -->
+
+  <!-- JS Global Compulsory (Do not remove)-->
+  <div th:replace="~{fragments :: common-scripts}"></div>
+
+</body>
+
+</html>

@@ -42,6 +42,15 @@ input {
   color: #a4b69e;
 }
 
+zapier-interfaces-chatbot-embed {
+  position: fixed !important;
+  left: 20px !important;
+  /* Ajusta según sea necesario */
+  right: auto !important;
+  bottom: 20px !important;
+  /* Mantenerlo en la parte inferior */
+}
+
 h1,
 .h1,
 h2,
@@ -5400,8 +5409,8 @@ button {
   display: block;
   background-color: #ffffff;
   color: #999999;
-  height: 45px;
-  width: 45px;
+  height: 44px;
+  width: 44px;
   line-height: 45px;
   text-align: center;
   border: 2px solid #a4b69e;
@@ -5411,7 +5420,8 @@ button {
 }
 
 .team .team-image .team-social ul li a:hover {
-  background-color: #a4b69e;
+  background-color: rgb(120.6686440678, 180.4872881356, 62.9127118644);
+  border: rgb(120.6686440678, 180.4872881356, 62.9127118644);
   color: #ffffff;
 }
 
@@ -5479,7 +5489,7 @@ button {
 }
 
 .team:hover .team-detail {
-  top: -75px;
+  top: -65px;
   transition: all 0.3s ease;
 }
 
@@ -5492,7 +5502,8 @@ button {
 }
 
 .team:hover .icon-btn {
-  background: #333333;
+  background: rgb(120.6686440678, 180.4872881356, 62.9127118644);
+  ;
   color: #ffffff;
 }
 
@@ -7003,14 +7014,14 @@ button {
 
 .stethoscope-img {
   position: absolute;
-  top: 60px;
-  right: 0px;
+  top: 600px;
+  right: 50px;
   z-index: 9;
   width: auto;
 }
 
 .stethoscope-img img {
-  width: 90%;
+  width: 100%;
 }
 
 .bg-primary-half-lg:before {
@@ -7171,7 +7182,8 @@ button {
 .sticky-img {
   position: fixed;
   top: 260px;
-  width: 50%;
+  width: 16%;
+  left: 500px !important;
 }
 
 .sticky-img.right-split {
@@ -8231,7 +8243,7 @@ button {
 /* Sidebar */
 .sidebar .widget {
   margin-bottom: 30px;
-  padding: 40px 30px;
+  padding: 37px 30px;
   background-color: #ffffff;
   box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.08);
 }

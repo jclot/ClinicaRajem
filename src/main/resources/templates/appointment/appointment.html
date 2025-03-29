@@ -2,7 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="activePage='appointment'">
 
 <head th:replace="~{layout/head :: head}"></head>
-</head>
 
 <body>
   <!--=================================
@@ -37,12 +36,16 @@
     <div class="container">
       <div class="row align-items-center mb-lg-0 mb-5">
         <div class="col-lg-5 text-center">
-          <img class="img-fluid" th:src="@{/images/about/04.png}" alt="">
+          <img class="img-fluid" th:src="@{/images/about/doctora.png}" alt="">
         </div>
         <div class="col-lg-7 position-relative">
           <div class="appointment-form">
             <h4 class="text-primary">Agenda tu cita ahora!</h4>
-            <form class="mt-5">
+            <p>Llena el formulario y presiona <b>"Agendar"</b> para abrir WhatsApp con un mensaje
+              pre-escrito que debes enviar sin modificar. Si no tienes WhatsApp, utiliza Whatsapp Web o descárgalo.
+              Comunícate al <b>+506
+                8955-4444</b> para recibir asesoramiento.</p>
+            <form class="mt-3" id="appointmentForm" onsubmit="submitForm(event)">
               <div class="row align-items-center">
                 <div class="form-group mb-3 col-md-6">
                   <input type="text" class="form-control" id="first-name" placeholder="Nombre" required>
@@ -61,19 +64,19 @@
                 </div>
                 <!-- Province, canton, and district select elements -->
                 <div class="form-group mb-3 select-border col-md-4">
-                  <select class="form-control basic-select" id="provincia" name="provincia">
+                  <select class="form-control basic-select" id="provincia" name="provincia" required>
                     <option value="">Seleccione Provincia</option>
                     <option th:each="provincia : ${provincias}" th:value="${provincia.key}"
                       th:text="${provincia.value.nombre}">Provincia</option>
                   </select>
                 </div>
                 <div class="form-group mb-3 select-border col-md-4">
-                  <select class="form-control basic-select" id="canton" name="canton" disabled>
+                  <select class="form-control basic-select" id="canton" name="canton" disabled required>
                     <option value="">Seleccione Cantón</option>
                   </select>
                 </div>
                 <div class="form-group mb-3 select-border col-md-4">
-                  <select class="form-control basic-select" id="distrito" name="distrito" disabled>
+                  <select class="form-control basic-select" id="distrito" name="distrito" disabled required>
                     <option value="">Seleccione Distrito</option>
                   </select>
                 </div>
@@ -84,7 +87,7 @@
                   <label class="form-label text-dark">Seleccione la fecha</label>
                   <div class="input-group date" id="datetimepicker-01" data-target-input="nearest">
                     <input type="text" class="form-control datetimepicker-input" placeholder="Fecha"
-                      data-target="#datetimepicker-01" required>
+                      data-target="#datetimepicker-01" id="fecha" required>
                     <div class="input-group-append" data-target="#datetimepicker-01" data-toggle="datetimepicker">
                       <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                     </div>
@@ -94,7 +97,7 @@
                   <label class="form-label text-dark">Seleccione la hora</label>
                   <div class="input-group date" id="datetimepicker-03" data-target-input="nearest">
                     <input type="text" class="form-control datetimepicker-input" placeholder="Hora"
-                      data-target="#datetimepicker-03" required />
+                      data-target="#datetimepicker-03" id="hora" required />
                     <div class="input-group-append" data-target="#datetimepicker-03" data-toggle="datetimepicker">
                       <div class="input-group-text"><i class="far fa-clock"></i></div>
                     </div>
@@ -116,13 +119,13 @@
   <!--=================================
     Team -->
   <section class="overleaping-section-title bg-overlay-black-70 bg-holder"
-    style="background-image: url(images/bg/04.jpg);">
+    style="background-image: url(images/gallery/11.jpg);">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-8 col-md-10 text-center position-relative">
           <div class="section-title center-divider mb-5">
-            <span class="text-white">Team of professional</span>
-            <h2 class="text-white">Our Outstanding Team Is Active To Help You!</h2>
+            <span class="text-white">Conoce a la profesional</span>
+            <h2 class="text-white">Comprometida a mejorar tu bienestar</h2>
           </div>
         </div>
       </div>
@@ -133,7 +136,7 @@
       <div class="row">
         <div class="col-md-4 mb-4 mb-md-0">
           <!-- team-01 START -->
-          <div class="team">
+          <!-- <div class="team">
             <div class="team-image">
               <img class="img-fluid b-radius-bottom-none" th:src="@{/images/team/01.jpg}" alt="">
               <div class="team-social">
@@ -152,28 +155,30 @@
               <span class="team-email">letstalk@medileaf.com</span>
             </div>
             <a class="icon-btn" href="#"><i class="fas fa-plus"></i></a>
-          </div>
+          </div> -->
           <!-- team-01 END -->
         </div>
         <div class="col-md-4 mb-4 mb-md-0">
           <!-- team-02 START -->
           <div class="team">
             <div class="team-image">
-              <img class="img-fluid b-radius-bottom-none" th:src="@{/images/team/02.jpg}" alt="">
+              <img class="img-fluid b-radius-bottom-none" th:src="@{/images/team/doctora-stand (1).jpg}" alt="">
               <div class="team-social">
-                <ul>
-                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <ul class="mb-5">
+                  <li><a href="https://www.facebook.com/p/Cl%C3%ADnica-Rajem-61560618930313/?locale=fr_CA"
+                      target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="https://www.instagram.com/clinicarajem/" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-instagram"></i></a></li>
+                  <li><a href="https://wa.me/message/U4CGOTTKMNI7O1" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-whatsapp"></i></a></li>
                 </ul>
               </div>
             </div>
             <div class="team-detail b-radius-top-none">
-              <span class="team-label">Neurologist</span>
-              <h4 class="team-title"><a href="team-single.html">Dr.Alice Williams</a></h4>
-              <span class="team-phone">+(704) 279-1249</span>
-              <span class="team-email">letstalk@medileaf.com</span>
+              <span class="team-label">Fisioterapeuta en Suelo Pélvico</span>
+              <h4 class="team-title"><a th:href="@{team-single}">Dr. Gloriana Córdoba Quiros</a></h4>
+              <span class="team-phone">+(506) 8955-4444</span>
+              <span class="team-email">clinicarajem@gmail.com</span>
             </div>
             <a class="icon-btn" href="#"><i class="fas fa-plus"></i></a>
           </div>
@@ -182,7 +187,7 @@
         <div class="col-md-4">
           <!-- team-03 START -->
           <div class="team">
-            <div class="team-image">
+            <!-- <div class="team-image">
               <img class="img-fluid b-radius-bottom-none" th:src="@{/images/team/03.jpg}" alt="">
               <div class="team-social">
                 <ul>
@@ -200,11 +205,11 @@
               <span class="team-email">letstalk@medileaf.com</span>
             </div>
             <a class="icon-btn" href="#"><i class="fas fa-plus"></i></a>
+          </div> -->
+            <!-- team-03 END -->
           </div>
-          <!-- team-03 END -->
         </div>
       </div>
-    </div>
   </section>
   <!--=================================
     Team -->
@@ -265,7 +270,7 @@
                     <h6>Tabla de horario</h6>
                     <p class="mb-4">Consulta nuestro horario especifico y agenda tu cita con la doctora. Encuentra el
                       momento que mejor se adapte a ti.</p>
-                    <a class="btn btn-outline-primary" href="timetable.html"><i class="fa fa-address-book"></i>Ver
+                    <a class="btn btn-outline-primary" th:href="@{/timetable}"><i class="fa fa-address-book"></i>Ver
                       Tabla</a>
                   </div>
                 </div>
@@ -287,19 +292,7 @@
 
   <!--=================================
     Javascript -->
-
-  <!-- JS Global Compulsory (Do not remove)-->
-  <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="js/popper/popper.min.js"></script>
-  <script src="js/bootstrap/bootstrap.min.js"></script>
-
-  <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
-  <script src="js/select2/select2.full.js"></script>
-  <script src="js/datetimepicker/moment.min.js"></script>
-  <script src="js/datetimepicker/datetimepicker.min.js"></script>
-
-  <!-- Template Scripts (Do not remove)-->
-  <script src="js/custom.js"></script>
+  <div th:replace="~{fragments :: common-scripts}"></div>
 
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" th:with="activePage='timetable'">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="activePage='timetable'">
 
 <head th:replace="~{layout/head :: head}"></head>
 
@@ -41,72 +41,169 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                  <th scope="col"><span>Time</span></th>
-                  <th scope="col"><span class="day">Sunday</span><span class="month">Aug 2020</span></th>
-                  <th scope="col"><span class="day">Monday</span><span class="month">Aug 2020</span></th>
-                  <th scope="col"><span class="day">Tuesday</span><span class="month">Aug 2020</span></th>
-                  <th scope="col"><span class="day">Wednesday</span><span class="month">Aug 2020</span></th>
-                  <th scope="col"><span class="day">Thursday</span><span class="month">Aug 2020</span></th>
-                  <th scope="col"><span class="day">Friday</span><span class="month">Aug 2020</span></th>
-                  <th scope="col"><span class="day">Saturday</span><span class="month">Aug 2020</span></th>
+                  <th scope="col"><span>Hora</span></th>
+                  <th scope="col" style="min-width: 144px;"><span class="day">Domingo</span><span class="month"
+                      th:text="${mesAbreviado}"></span></th>
+                  <th scope="col"><span class="day">Lunes</span><span class="month" th:text="${mesAbreviado}">Aug
+                      2020</span></th>
+                  <th scope="col"><span class="day">Martes</span><span class="month" th:text="${mesAbreviado}">Aug
+                      2020</span></th>
+                  <th scope="col"><span class="day">Miércoles</span><span class="month" th:text="${mesAbreviado}">Aug
+                      2020</span></th>
+                  <th scope="col"><span class="day">Jueves</span><span class="month" th:text="${mesAbreviado}">Aug
+                      2020</span></th>
+                  <th scope="col"><span class="day">Viernes</span><span class="month" th:text="${mesAbreviado}">Aug
+                      2020</span></th>
+                  <th scope="col" style="min-width: 144px;"><span class="day">Sábado</span><span class="month"
+                      th:text="${mesAbreviado}">Aug
+                      2020</span></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>09:00</td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-white bg-primary"><span>Neurologist</span><span>Dr.Paul Flavius</span></td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-primary"><span>Eye Care</span><span>Dr.Karla</span></td>
-                  <td class="text-white bg-secondary"><span>Dental Care</span><span>Dr.Ben Aguilar</span></td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-primary bg-light"><span>Gynecology</span><span>Dr.Felica Queen</span></td>
+                  <td>09:00am - 10:15am</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-white bg-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
                 </tr>
                 <tr>
-                  <td>11:00</td>
-                  <td class="text-primary"><span>Eye Care</span><span>Dr.Karla</span></td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-primary bg-light"><span>Gynecology</span><span>Dr.Felica Queen</span></td>
-                  <td class="text-white bg-dark"><span>Pediatric</span><span>Dr.Karla</span></td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-white bg-primary"><span>Urologist</span><span>Dr.Ben Aguilar</span>
-                  </td>
-                  <td><span class="space-line"></span></td>
+                  <td>10:15am - 11:30am</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
                 </tr>
                 <tr>
-                  <td>13:00</td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-white bg-dark"><span>Orthopaedics</span><span>Dr.Mellissa Doe</span></td>
-                  <td class="text-white bg-secondary"><span>Dental Care</span><span>Dr.Ben Aguilar</span></td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-primary bg-light"><span>Gynecology</span><span>Dr.Felica Queen</span></td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-white bg-dark"><span>Pediatric</span><span>Dr.Karla George</span></td>
+                  <td>11:30am - 12:45pm</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-white bg-dark"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-dark"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-dark"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-dark"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-dark"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                </tr>
+                <!-- <tr>
+                  <td>12:00pm</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-white bg-primary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-primary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-primary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-primary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-primary"><span>Almuerzo</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                </tr> -->
+                <tr>
+                  <td>12:45pm - 2:00pm</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-white bg-secondary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-secondary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-secondary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-secondary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-secondary"><span>Almuerzo</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                </tr>
+                <!-- <tr>
+                  <td>2:00pm</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-white bg-primary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-primary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-primary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-primary"><span>Almuerzo</span></td>
+                  <td class="text-white bg-primary"><span>Almuerzo</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                </tr> -->
+                <tr>
+                  <td>2:00pm - 3:15pm</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
                 </tr>
                 <tr>
-                  <td>16:00</td>
-                  <td class="text-primary bg-light"><span>Gynecology</span><span>Dr.Felica Queen</span></td>
-                  <td><span class="space-line"></span></td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-white bg-primary"><span>Urologist</span><span>Dr.Ben Aguilar</span>
-                  </td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-white bg-secondary"><span>Medicine</span><span>Dr.Anne Smith</span>
-                  </td>
-                  <td><span class="space-line"></span></td>
+                  <td>3:15pm - 4:30pm</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-white bg-dark"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-dark"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-dark"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-dark"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-dark"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
                 </tr>
                 <tr>
-                  <td>16:00</td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-white bg-secondary"><span>Medicine</span><span>Dr.Anne Smith</span>
-                  </td>
-                  <td class="text-white bg-dark"><span>Cardiology</span><span>Dr.Homer Reyes</span></td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-white bg-dark"><span>Orthopaedics</span><span>Dr.Mellissa Doe</span></td>
-                  <td><span class="space-line"></span></td>
-                  <td class="text-white bg-primary"><span>Neurologist</span><span>Dr.Paul Flavius</span></td>
+                  <td>4:30pm - 5:45pm</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-white bg-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-white bg-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr.
+                      Gloriana Córdoba</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
                 </tr>
-
+                <tr>
+                  <td>5:45pm - 7:00pm</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary"><span>Fisioterapia en Suelo Pélvico</span><span class="small">Dr. Gloriana
+                      Córdoba</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                </tr>
+                <!-- <tr>
+                  <td>7:00pm</td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                  <td class="text-primary bg-light"><span>Cerrado</span></td>
+                </tr> -->
+                <tr>
               </tbody>
             </table>
           </div>
