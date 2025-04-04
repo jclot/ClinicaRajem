@@ -38,7 +38,7 @@ function submitForm(event) {
 
     const mensajeCodificado = encodeURIComponent(mensaje);
 
-    window.open(`https://wa.me/50688269537?text=${mensajeCodificado}`, '_blank', 'width=800,height=600');
+    window.open(`whatsapp://send?phone=50689554444&text=${mensajeCodificado}`, '_blank', 'width=800,height=600');
 
 }
 
@@ -71,5 +71,6 @@ function submitFormContact(event) {
     *Mensaje:* ${datos.mensaje}`;
 
     const mensajeCodificado = encodeURIComponent(mensaje);
-    window.open(`https://wa.me/50688269537?text=${mensajeCodificado}`, '_blank', 'width=800,height=600');
+    window.open(`https://wa.me/50689554444?text=${mensajeCodificado}`, '_blank', 'width=800,height=600');
+
 }
