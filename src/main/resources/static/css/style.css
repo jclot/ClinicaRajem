@@ -5725,6 +5725,10 @@ button {
   padding: 10px 20px;
 }
 
+.header .topbar-down {
+  display: none;
+}
+
 .header .topbar a {
   color: #ffffff;
 }
@@ -5855,7 +5859,8 @@ button {
 }
 
 .navbar-brand img {
-  height: 40px;
+  /* height: 40px; */
+  display: none;
 }
 
 .navbar .navbar-brand {
@@ -6345,6 +6350,14 @@ button {
   }
 }
 
+@media (min-width: 1107px) and (max-width: 1600px) {
+  .stethoscope-img {
+    width: 400px !important;
+    top: 600px !important;
+    right: 0% !important;
+  }
+}
+
 @media (max-width: 1400px) {
   .navbar .navbar-nav .nav-link {
     padding: 10px 12px;
@@ -6606,11 +6619,54 @@ button {
 
 @media (max-width: 575px) {
   .navbar-light .navbar-brand {
-    flex: none;
+    flex: auto;
+    text-align: center;
   }
 
   .header .add-listing {
     flex: none;
+  }
+
+  .header .topbar {
+    display: none;
+  }
+
+  .header .topbar-down {
+    background: #a4b69e;
+    padding: 5px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .header .topbar-down a {
+    color: #ffffff;
+  }
+
+  .header .topbar-down .social {
+    display: inline-block;
+  }
+  
+  .header .topbar-down .social ul {
+    margin: 0;
+  }
+  
+  .header .topbar-down .social ul li {
+    display: inline-block;
+    padding: 0 4px;
+  }
+  
+  .header .topbar-down .social ul li a {
+    color: #ffffff;
+  }
+  
+  .header .topbar-down .social ul li a:hover {
+    color: #ffffff;
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+    display: inline-flex;
+    margin-bottom: 10px;
   }
 }
 
@@ -7014,10 +7070,22 @@ button {
 
 .stethoscope-img {
   position: absolute;
-  top: 600px;
-  right: 50px;
+  top: 500px;
+  right: 10px;
   z-index: 9;
-  width: auto;
+  width: 550px;
+}
+
+.vagina-img {
+  position: absolute;
+  top: 500px;
+  right: 5px;
+  z-index: 9;
+  width: 550px;
+}
+
+.vagina-img img {
+  width: 100%;
 }
 
 .stethoscope-img img {
