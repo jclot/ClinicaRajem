@@ -6645,24 +6645,24 @@ button {
   .header .topbar-down .social {
     display: inline-block;
   }
-  
+
   .header .topbar-down .social ul {
     margin: 0;
   }
-  
+
   .header .topbar-down .social ul li {
     display: inline-block;
     padding: 0 4px;
   }
-  
+
   .header .topbar-down .social ul li a {
     color: #ffffff;
   }
-  
+
   .header .topbar-down .social ul li a:hover {
     color: #ffffff;
   }
-  
+
   .navbar-brand img {
     height: 40px;
     display: inline-flex;

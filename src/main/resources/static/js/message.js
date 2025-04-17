@@ -37,7 +37,6 @@ function submitForm(event) {
     *Fecha y hora:* ${datos.fecha} a las ${datos.hora}`;
 
     const mensajeCodificado = encodeURIComponent(mensaje);
-
     window.open(`whatsapp://send?phone=50689554444&text=${mensajeCodificado}`, '_blank', 'width=800,height=600');
 
 }
