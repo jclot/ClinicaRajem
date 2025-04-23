@@ -6664,9 +6664,8 @@ button {
   }
 
   .navbar-brand img {
-    height: 40px;
-    display: inline-flex;
-    margin-bottom: 10px;
+    height: 50px;
+    display: inline;
   }
 }
 
