@@ -42,7 +42,8 @@
           <div class="appointment-form">
             <h4 class="text-primary">Agenda tu cita ahora!</h4>
             <p>Llena el formulario y presiona <b>"Agendar"</b> para abrir WhatsApp con un mensaje
-              pre-escrito que debes enviar sin modificar o bien, visita nuestra pagina desde el teléfono con Whatsapp instalado. Si no tienes WhatsApp, utiliza Whatsapp Web o descárgalo.
+              pre-escrito que debes enviar sin modificar o bien, visita nuestra pagina desde el teléfono con Whatsapp
+              instalado. Si no tienes WhatsApp, utiliza Whatsapp Web o descárgalo.
               Comunícate al <b>+506
                 8955-4444</b> para recibir asesoramiento.</p>
             <form class="mt-3" id="appointmentForm" onsubmit="submitForm(event)">
@@ -102,6 +103,9 @@
                       <div class="input-group-text"><i class="far fa-clock"></i></div>
                     </div>
                   </div>
+                </div>
+                <div class="mb-3 col-lg-12">
+                  <textarea class="form-control" id="motivo" rows="5" placeholder="Motivo de la cita"></textarea>
                 </div>
                 <div class="form-group col-sm-12">
                   <button type="submit" class="btn btn-primary">Agendar</button>
@@ -165,8 +169,8 @@
               <img class="img-fluid b-radius-bottom-none" th:src="@{/images/team/doctora-stand (1).jpg}" alt="">
               <div class="team-social">
                 <ul class="mb-5">
-                  <li><a href="https://www.facebook.com/profile.php?id=61560539370759"
-                      target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="https://www.facebook.com/profile.php?id=61560539370759" target="_blank"
+                      rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
                   <li><a href="https://www.instagram.com/clinicarajem/" target="_blank" rel="noopener noreferrer"><i
                         class="fab fa-instagram"></i></a></li>
                   <li><a href="https://wa.me/message/U4CGOTTKMNI7O1" target="_blank" rel="noopener noreferrer"><i
