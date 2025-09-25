@@ -4,7 +4,7 @@ function detectDevice() {
     const isDesktop = !isMobile;
     const isIOS = /iphone|ipad|ipod/i.test(userAgent);
     const isAndroid = /android/i.test(userAgent);
-    
+
     return {
         isMobile,
         isDesktop,
@@ -16,11 +16,10 @@ function detectDevice() {
 function openWhatsApp(phoneNumber, message) {
     const device = detectDevice();
     const encodedMessage = encodeURIComponent(message);
-    
-    // Función para intentar múltiples métodos
+
     function tryOpenWhatsApp() {
         const methods = [];
-        
+
         if (device.isMobile) {
             // Para móviles, priorizar la app nativa
             methods.push(`whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`);
@@ -32,50 +31,42 @@ function openWhatsApp(phoneNumber, message) {
             methods.push(`https://wa.me/${phoneNumber}?text=${encodedMessage}`);
             methods.push(`whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`);
         }
-        
-        // Intentar el primer método
+
         let currentMethod = 0;
-        
+
         function tryNext() {
             if (currentMethod < methods.length) {
                 const url = methods[currentMethod];
                 console.log(`Intentando método ${currentMethod + 1}: ${url}`);
-                
-                // Crear un enlace temporal y hacer clic
+
                 const link = document.createElement('a');
                 link.href = url;
                 link.target = '_blank';
                 link.rel = 'noopener noreferrer';
-                
-                // Agregar al DOM temporalmente
+
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-                
+
                 currentMethod++;
-                
-                // Si no es el último método, esperar un poco y probar el siguiente
+
                 if (currentMethod < methods.length) {
                     setTimeout(() => {
-                        // Verificar si la ventana se abrió correctamente
-                        // Si no, intentar el siguiente método
                         tryNext();
                     }, 1500);
                 }
             } else {
-                // Si todos los métodos fallaron, mostrar el mensaje para copiar
                 showFallbackOption(phoneNumber, message);
             }
         }
-        
+
         tryNext();
     }
-    
+
     tryOpenWhatsApp();
 }
 
 function showFallbackOption(phoneNumber, message) {
-    // Crear modal con opciones de respaldo
     const modal = document.createElement('div');
     modal.innerHTML = `
         <div style="
@@ -187,7 +178,7 @@ function showFallbackOption(phoneNumber, message) {
             </div>
         </div>
     `;
-    
+
     document.body.appendChild(modal);
 }
 
@@ -195,7 +186,6 @@ function copyToClipboard(text) {
     if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text);
     } else {
-        // Fallback para navegadores más antiguos
         const textArea = document.createElement("textarea");
         textArea.value = text;
         textArea.style.position = "fixed";
@@ -209,22 +199,21 @@ function copyToClipboard(text) {
     }
 }
 
-// Funciones actualizadas para tus formularios
 function submitForm(event) {
     event.preventDefault();
     const form = event.target;
-    
+
     if (!form.checkValidity()) {
         form.reportValidity();
         return;
     }
-    
+
     const getValue = id => document.getElementById(id).value;
     const getSelectedText = id => {
         const select = document.getElementById(id);
         return select.options[select.selectedIndex]?.text || '';
     };
-    
+
     const datos = {
         nombre: getValue('first-name'),
         apellido: getValue('last-name'),
@@ -235,9 +224,10 @@ function submitForm(event) {
         canton: getSelectedText('canton'),
         distrito: getSelectedText('distrito'),
         fecha: getValue('fecha'),
-        hora: getValue('hora')
+        hora: getValue('hora'),
+        motivo: getValue('motivo')
     };
-    
+
     const mensaje = `Nueva cita:
 *Nombre:* ${datos.nombre}
 *Apellido:* ${datos.apellido}
@@ -245,23 +235,23 @@ function submitForm(event) {
 *Teléfono:* ${datos.telefono}
 *Dirección:* ${datos.direccion}
 *Ubicación:* ${datos.provincia} > ${datos.canton} > ${datos.distrito}
-*Fecha y hora:* ${datos.fecha} a las ${datos.hora}`;
-    
-    // Usar la nueva función universal
+*Fecha y hora:* ${datos.fecha} a las ${datos.hora}
+*Motivo:* ${datos.motivo}`;
+
     openWhatsApp('50689554444', mensaje);
 }
 
 function submitFormContact(event) {
     event.preventDefault();
     const form = event.target;
-    
+
     if (!form.checkValidity()) {
         form.reportValidity();
         return;
     }
-    
+
     const getValue = id => document.getElementById(id).value;
-    
+
     const datos = {
         nombre: getValue('first-name-contact'),
         apellido: getValue('last-name-contact'),
@@ -270,7 +260,7 @@ function submitFormContact(event) {
         asunto: getValue('subject-contact'),
         mensaje: getValue('message-contact')
     };
-    
+
     const mensaje = `Nuevo mensaje de contacto:
 *Nombre:* ${datos.nombre}
 *Apellido:* ${datos.apellido}
@@ -278,7 +268,6 @@ function submitFormContact(event) {
 *Teléfono:* ${datos.telefono}
 *Asunto:* ${datos.asunto}
 *Mensaje:* ${datos.mensaje}`;
-    
-    // Usar la nueva función universal
+
     openWhatsApp('50689554444', mensaje);
 }
