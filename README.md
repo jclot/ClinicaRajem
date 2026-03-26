@@ -25,7 +25,7 @@ The project utilizes a decoupled architecture, leveraging a robust Java Spring B
 
 The application is currently deployed and accessible in a production-like environment.
 
-* **Demo Environment:** [Clinica Rajem on Render](https://clinicarajem.onrender.com/)
+* **Demo Environment:** [Clinica Rajem on Render](https://clinicarajem.com/)
 
 ---
 
